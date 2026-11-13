@@ -1,0 +1,594 @@
+{
+  "schema_version": 1,
+  "categories": {
+    "QUANT": "Atome, Orbitale & Quantenmechanik",
+    "CLASS": "Classroom English",
+    "REASON": "Erklären & Argumentieren",
+    "BOND": "Bindung, MO-Theorie & Symmetrie",
+    "SPEC": "Spektroskopie",
+    "SOLID": "Festkörper & Oberflächen",
+    "MATH": "Mathematik, Einheiten & Diagramme"
+  },
+  "entries": [
+    {
+      "id": "CLASS-001",
+      "type": "phrase",
+      "category": "CLASS",
+      "de": "Wir schauen uns das Schritt für Schritt an.",
+      "en": "Let's work through this step by step.",
+      "alternatives": [
+        "Let's take it one step at a time."
+      ],
+      "example_en": "Let's work through the diagram step by step before we discuss the result."
+    },
+    {
+      "id": "CLASS-002",
+      "type": "phrase",
+      "category": "CLASS",
+      "de": "Bevor wir weitergehen, fassen wir den wichtigsten Punkt zusammen.",
+      "en": "Before we move on, let's sum up the key point.",
+      "alternatives": [
+        "Before we go any further, let's recap the main idea."
+      ],
+      "scenario_de": "Du hast die Modellannahmen besprochen und willst vor dem nächsten Thema kurz zusammenfassen.",
+      "scenario_answer_en": "Before we move on, let’s recap what this model assumes and what it leaves out."
+    },
+    {
+      "id": "CLASS-003",
+      "type": "phrase",
+      "category": "CLASS",
+      "de": "Welche Annahme machen wir hier?",
+      "en": "What assumption are we making here?",
+      "alternatives": [
+        "What are we assuming at this point?"
+      ],
+      "example_en": "What assumption are we making when we treat the electron as a particle in a box?"
+    },
+    {
+      "id": "CLASS-004",
+      "type": "phrase",
+      "category": "CLASS",
+      "de": "Besprecht zu zweit, welche Erklärung überzeugender ist.",
+      "en": "Work in pairs and discuss which explanation is more convincing.",
+      "alternatives": [
+        "Discuss with a partner which explanation is more convincing."
+      ]
+    },
+    {
+      "id": "CLASS-005",
+      "type": "phrase",
+      "category": "CLASS",
+      "de": "Kann jemand seine Antwort begründen?",
+      "en": "Can someone explain the reasoning behind their answer?",
+      "alternatives": [
+        "Can anyone tell us how they arrived at their answer?"
+      ]
+    },
+    {
+      "id": "CLASS-006",
+      "type": "phrase",
+      "category": "CLASS",
+      "de": "Wir brauchen dafür noch keine Rechnung.",
+      "en": "We don't need to do any calculations for this yet.",
+      "alternatives": [
+        "We can do this without any calculations for now."
+      ]
+    },
+    {
+      "id": "CLASS-007",
+      "type": "phrase",
+      "category": "CLASS",
+      "de": "Zeigt mir im Diagramm, worauf sich eure Antwort stützt.",
+      "en": "Show me what in the diagram supports your answer.",
+      "alternatives": [
+        "Point to the part of the diagram that supports your answer."
+      ],
+      "scenario_de": "Eine Gruppe nennt eine Antwort, hat aber noch nicht gezeigt, wie sie diese aus der Grafik ableitet.",
+      "scenario_answer_en": "Show me what in the diagram supports your answer. Which feature did you use?"
+    },
+    {
+      "id": "CLASS-008",
+      "type": "phrase",
+      "category": "CLASS",
+      "de": "Nehmt euch eine Minute und skizziert eure Idee.",
+      "en": "Take a minute to sketch your idea.",
+      "alternatives": [
+        "Spend a minute drawing a quick sketch of your idea."
+      ]
+    },
+    {
+      "id": "REASON-001",
+      "type": "phrase",
+      "category": "REASON",
+      "de": "Das ist eine gute Frage. Der entscheidende Unterschied ist …",
+      "en": "That's a good question. The key difference is …",
+      "alternatives": [
+        "The key distinction is …"
+      ],
+      "example_en": "The key difference is that an orbital describes a quantum state, not a trajectory."
+    },
+    {
+      "id": "REASON-002",
+      "type": "phrase",
+      "category": "REASON",
+      "de": "Anders gesagt …",
+      "en": "Put another way, …",
+      "alternatives": [
+        "In other words, …"
+      ],
+      "example_en": "Put another way, the picture shows where the electron is likely to be found."
+    },
+    {
+      "id": "REASON-003",
+      "type": "phrase",
+      "category": "REASON",
+      "de": "Das klingt plausibel, aber es setzt voraus, dass …",
+      "en": "That sounds plausible, but it assumes that …",
+      "alternatives": [
+        "That makes sense if we assume that …"
+      ],
+      "scenario_de": "Ein Student nennt eine plausible Begründung. Sie funktioniert aber nur, wenn alle Messungen vergleichbar sind.",
+      "scenario_answer_en": "That sounds plausible, but it assumes that the measurements were taken under the same conditions."
+    },
+    {
+      "id": "REASON-004",
+      "type": "phrase",
+      "category": "REASON",
+      "de": "Was würde sich ändern, wenn wir diese Annahme fallen lassen?",
+      "en": "What would change if we dropped that assumption?",
+      "alternatives": [
+        "How would things change if we didn't make that assumption?"
+      ]
+    },
+    {
+      "id": "REASON-005",
+      "type": "phrase",
+      "category": "REASON",
+      "de": "Aus dieser Beobachtung allein können wir nicht schließen, dass …",
+      "en": "This observation alone doesn't tell us that …",
+      "alternatives": [
+        "We can't conclude from this observation alone that …"
+      ],
+      "example_en": "This observation alone doesn't tell us that the molecule has a particular shape.",
+      "usage_note_de": "infer from = aus etwas folgern, conclude from = aus etwas schließen.",
+      "scenario_de": "Ein Student zieht aus einer Beobachtung eine zu weitreichende Schlussfolgerung.",
+      "scenario_answer_en": "This observation alone doesn’t tell us that the model is correct. We’d need more evidence."
+    },
+    {
+      "id": "REASON-006",
+      "type": "phrase",
+      "category": "REASON",
+      "de": "Was wir daraus schließen können, ist …",
+      "en": "What we can infer from this is …",
+      "alternatives": [
+        "What this tells us is …"
+      ]
+    },
+    {
+      "id": "REASON-007",
+      "type": "phrase",
+      "category": "REASON",
+      "de": "Lass mich prüfen, ob ich deine Frage richtig verstanden habe.",
+      "en": "Let me check that I've understood your question correctly.",
+      "alternatives": [
+        "Let me make sure I've got your question right."
+      ]
+    },
+    {
+      "id": "REASON-008",
+      "type": "phrase",
+      "category": "REASON",
+      "de": "Das stimmt unter diesen Bedingungen.",
+      "en": "That's true under these conditions.",
+      "alternatives": [
+        "That's true as long as these conditions hold."
+      ]
+    },
+    {
+      "id": "REASON-009",
+      "type": "phrase",
+      "category": "REASON",
+      "de": "Das Modell erklärt den Trend, aber nicht jeden einzelnen Messwert.",
+      "en": "The model explains the trend, but it doesn't account for every individual measurement.",
+      "alternatives": [
+        "The model captures the trend, but not every data point."
+      ]
+    },
+    {
+      "id": "QUANT-001",
+      "type": "phrase",
+      "category": "QUANT",
+      "de": "Elektronen bewegen sich nicht auf festen Bahnen.",
+      "en": "Electrons don't follow fixed paths.",
+      "alternatives": [
+        "Electrons don't travel along fixed paths."
+      ],
+      "example_en": "In the quantum-mechanical description of an atom, electrons don't follow fixed paths.",
+      "usage_note_de": "fixed path = feste Bahn; follow a path ist idiomatisch.",
+      "scenario_de": "Eine Studentin fragt: “Is an orbital just the path an electron takes around the nucleus?” Antworte in zwei Sätzen.",
+      "scenario_answer_en": "No. In the quantum model, electrons don’t follow fixed paths. An orbital is a wave function, not a trajectory."
+    },
+    {
+      "id": "QUANT-002",
+      "type": "phrase",
+      "category": "QUANT",
+      "de": "Im Bohr-Modell sind nur bestimmte Kreisbahnen erlaubt.",
+      "en": "In the Bohr model, only certain circular orbits are allowed.",
+      "alternatives": [
+        "The Bohr model allows only certain circular orbits."
+      ],
+      "example_en": "In the Bohr model, the allowed circular orbits have specific radii.",
+      "usage_note_de": "Singular radius, Plural radii. Orbit = Bahn, orbital = Orbital."
+    },
+    {
+      "id": "QUANT-003",
+      "type": "phrase",
+      "category": "QUANT",
+      "de": "Ein atomares Orbital ist eine Einelektronen-Wellenfunktion.",
+      "en": "An atomic orbital is a one-electron wave function.",
+      "alternatives": [
+        "An atomic orbital is a wave function for one electron."
+      ],
+      "example_en": "An atomic orbital is a one-electron wave function, not a path."
+    },
+    {
+      "id": "QUANT-004",
+      "type": "phrase",
+      "category": "QUANT",
+      "de": "Das Betragsquadrat der Wellenfunktion ergibt die Wahrscheinlichkeitsdichte.",
+      "en": "The squared magnitude of the wave function gives the probability density.",
+      "alternatives": [
+        "The probability density is given by the modulus squared of the wave function."
+      ],
+      "usage_note_de": "Für die Wahrscheinlichkeit in einem ganzen Bereich wird die Dichte über den Bereich integriert."
+    },
+    {
+      "id": "QUANT-005",
+      "type": "phrase",
+      "category": "QUANT",
+      "de": "Die Fläche umschließt einen Bereich, in dem das Elektron wahrscheinlich gefunden wird.",
+      "en": "The surface encloses a region where the electron is likely to be found.",
+      "alternatives": [
+        "The surface encloses a region in which we are likely to detect the electron."
+      ],
+      "example_en": "The surface encloses a region where the electron is likely to be found, but it can still be detected outside that region.",
+      "usage_note_de": "Region ist hier treffender als room. Die dargestellte Fläche ist nicht das Orbital selbst.",
+      "scenario_de": "Ein Student zeigt auf die Oberfläche einer Orbitaldarstellung. Erkläre, was diese Fläche umschließt.",
+      "scenario_answer_en": "The surface encloses a region where the electron is likely to be found. There’s still a chance of detecting it outside that region."
+    },
+    {
+      "id": "QUANT-006",
+      "type": "phrase",
+      "category": "QUANT",
+      "de": "Die gezeichnete Fläche ist keine scharfe physikalische Grenze.",
+      "en": "The surface shown isn't a hard boundary.",
+      "alternatives": [
+        "The surface in the diagram isn't a physical boundary."
+      ],
+      "example_en": "The surface shown isn't a hard boundary; it represents a choice about how to visualise the orbital."
+    },
+    {
+      "id": "QUANT-007",
+      "type": "phrase",
+      "category": "QUANT",
+      "de": "Das Elektron kann auch außerhalb dieses Bereichs nachgewiesen werden.",
+      "en": "The electron can also be detected outside that region.",
+      "alternatives": [
+        "We can also find the electron outside that region."
+      ]
+    },
+    {
+      "id": "QUANT-008",
+      "type": "phrase",
+      "category": "QUANT",
+      "de": "Eine einzelne Ortsmessung liefert einen Messpunkt, keine Verteilung.",
+      "en": "A single position measurement gives us one point, not a distribution.",
+      "alternatives": [
+        "One measurement gives us a position, not a probability distribution."
+      ],
+      "usage_note_de": "Viele gleichartig vorbereitete Messungen liefern die Ortsverteilung, aber daraus allein folgt nicht die vollständige Wellenfunktion.",
+      "scenario_de": "Eine Studentin fragt: “Does one position measurement tell me what the whole orbital looks like?” Gib zuerst die direkte Antwort.",
+      "scenario_answer_en": "No. One measurement gives us a single position. To map the distribution, we need many measurements on atoms prepared in the same state."
+    },
+    {
+      "id": "QUANT-009",
+      "type": "phrase",
+      "category": "QUANT",
+      "de": "Für die Verteilung brauchen wir viele Messungen an gleich präparierten Atomen.",
+      "en": "To build up the distribution, we need many measurements on atoms prepared in the same state.",
+      "alternatives": [
+        "We need many measurements on identically prepared atoms to map out the distribution."
+      ]
+    },
+    {
+      "id": "QUANT-010",
+      "type": "phrase",
+      "category": "QUANT",
+      "de": "Die Unschärferelation betrifft Ort und Impuls.",
+      "en": "The uncertainty principle concerns position and momentum.",
+      "alternatives": [
+        "The uncertainty principle relates the uncertainties in position and momentum."
+      ],
+      "example_en": "Here, uncertainty means the spread in measurement outcomes for a given state, not an instrument error.",
+      "usage_note_de": "Impuls heißt momentum. Uncertainty ist in diesem Zusammenhang kein bloßer Messfehler."
+    },
+    {
+      "id": "QUANT-011",
+      "type": "phrase",
+      "category": "QUANT",
+      "de": "An einem Knoten ist die Wellenfunktion null.",
+      "en": "At a node, the wave function is zero.",
+      "alternatives": [
+        "The wave function vanishes at a node."
+      ]
+    },
+    {
+      "id": "QUANT-012",
+      "type": "phrase",
+      "category": "QUANT",
+      "de": "Zwei verschiedene Zustände haben dieselbe Energie.",
+      "en": "Two distinct states have the same energy.",
+      "alternatives": [
+        "The two states are degenerate."
+      ],
+      "example_en": "In this model, these two states are degenerate because they have the same energy."
+    },
+    {
+      "id": "BOND-001",
+      "type": "phrase",
+      "category": "BOND",
+      "de": "Die beiden Elektronen sind ungepaart.",
+      "en": "The two electrons are unpaired.",
+      "alternatives": [
+        "There are two unpaired electrons."
+      ],
+      "example_en": "The oxygen molecule has two unpaired electrons in its ground state.",
+      "scenario_de": "Ein Student fragt, wie das MO-Modell den Paramagnetismus von Sauerstoff erklärt.",
+      "scenario_answer_en": "Molecular oxygen is paramagnetic because it has two unpaired electrons. The molecular orbital diagram shows one electron in each of the two degenerate antibonding π orbitals."
+    },
+    {
+      "id": "BOND-002",
+      "type": "phrase",
+      "category": "BOND",
+      "de": "Bestimmt die Bindungsordnung aus dem MO-Diagramm.",
+      "en": "Determine the bond order from the molecular orbital diagram.",
+      "alternatives": [
+        "Use the molecular orbital diagram to work out the bond order."
+      ]
+    },
+    {
+      "id": "BOND-003",
+      "type": "phrase",
+      "category": "BOND",
+      "de": "Dieses Orbital ist antibindend.",
+      "en": "This orbital is antibonding.",
+      "alternatives": [
+        "This is an antibonding orbital."
+      ]
+    },
+    {
+      "id": "BOND-004",
+      "type": "phrase",
+      "category": "BOND",
+      "de": "Das freie Elektronenpaar zählt als eine Elektronendomäne.",
+      "en": "The lone pair counts as one electron domain.",
+      "alternatives": [
+        "Count the lone pair as a single electron domain."
+      ],
+      "example_en": "In the VSEPR model, a lone pair counts as one electron domain."
+    },
+    {
+      "id": "BOND-005",
+      "type": "phrase",
+      "category": "BOND",
+      "de": "Unterscheidet zwischen Elektronenpaargeometrie und Molekülgestalt.",
+      "en": "Distinguish between the electron-pair geometry and the molecular shape.",
+      "alternatives": [
+        "Don't confuse the electron-pair arrangement with the molecular shape."
+      ]
+    },
+    {
+      "id": "BOND-006",
+      "type": "phrase",
+      "category": "BOND",
+      "de": "Spiegelt das Molekül an dieser Ebene.",
+      "en": "Reflect the molecule across this plane.",
+      "alternatives": [
+        "Take the mirror image of the molecule in this plane."
+      ]
+    },
+    {
+      "id": "BOND-007",
+      "type": "phrase",
+      "category": "BOND",
+      "de": "Nach der Drehung sieht das Molekül genauso aus wie vorher.",
+      "en": "After the rotation, the molecule looks the same as it did before.",
+      "alternatives": [
+        "The rotation leaves the molecule looking unchanged."
+      ],
+      "example_en": "A rotation by 120 degrees about the principal axis leaves the ammonia molecule looking unchanged."
+    },
+    {
+      "id": "SPEC-001",
+      "type": "phrase",
+      "category": "SPEC",
+      "de": "Der Übergang liegt zwischen zwei diskreten Energieniveaus.",
+      "en": "The transition is between two discrete energy levels.",
+      "alternatives": [
+        "The system moves from one discrete energy level to another."
+      ]
+    },
+    {
+      "id": "SPEC-002",
+      "type": "phrase",
+      "category": "SPEC",
+      "de": "Die Photonenenergie entspricht der Energiedifferenz.",
+      "en": "The photon energy matches the energy difference.",
+      "alternatives": [
+        "The photon energy equals the difference between the two energy levels."
+      ]
+    },
+    {
+      "id": "SPEC-003",
+      "type": "phrase",
+      "category": "SPEC",
+      "de": "Welche Schwingungen sind IR-aktiv?",
+      "en": "Which vibrational modes are IR-active?",
+      "alternatives": [
+        "Which modes can absorb infrared radiation?"
+      ],
+      "example_en": "A vibrational mode is IR-active if the molecular dipole moment changes as the molecule vibrates in that mode."
+    },
+    {
+      "id": "SPEC-004",
+      "type": "phrase",
+      "category": "SPEC",
+      "de": "Dieses Signal spaltet in vier Linien auf.",
+      "en": "This signal splits into four lines.",
+      "alternatives": [
+        "This signal appears as a quartet."
+      ],
+      "example_en": "Under first-order conditions, this proton signal appears as a quartet."
+    },
+    {
+      "id": "SPEC-005",
+      "type": "phrase",
+      "category": "SPEC",
+      "de": "Die chemische Verschiebung wird in ppm angegeben.",
+      "en": "The chemical shift is reported in parts per million.",
+      "alternatives": [
+        "We express the chemical shift in ppm."
+      ]
+    },
+    {
+      "id": "SPEC-006",
+      "type": "phrase",
+      "category": "SPEC",
+      "de": "Mit zunehmender Wellenlänge nimmt die Photonenenergie ab.",
+      "en": "As the wavelength increases, the photon energy decreases.",
+      "alternatives": [
+        "A longer wavelength corresponds to a lower photon energy."
+      ],
+      "scenario_de": "Ein Student vermutet, dass rotes Licht pro Photon mehr Energie hat als blaues Licht. Reagiere kurz.",
+      "scenario_answer_en": "It’s the other way round. Red light has a longer wavelength, so each photon has less energy."
+    },
+    {
+      "id": "SOLID-001",
+      "type": "phrase",
+      "category": "SOLID",
+      "de": "Das ist der Abstand zwischen benachbarten Netzebenen.",
+      "en": "This is the spacing between adjacent lattice planes.",
+      "alternatives": [
+        "This is the interplanar spacing."
+      ]
+    },
+    {
+      "id": "SOLID-002",
+      "type": "phrase",
+      "category": "SOLID",
+      "de": "Die Elementarzelle wiederholt sich in drei Dimensionen.",
+      "en": "The unit cell repeats in three dimensions.",
+      "alternatives": [
+        "The crystal structure is generated by repeating the unit cell in three dimensions."
+      ]
+    },
+    {
+      "id": "SOLID-003",
+      "type": "phrase",
+      "category": "SOLID",
+      "de": "Nehmt die Kehrwerte der Achsenabschnitte.",
+      "en": "Take the reciprocals of the intercepts.",
+      "alternatives": [
+        "Find the reciprocal of each intercept."
+      ],
+      "example_en": "Take the reciprocals of the intercepts as a step towards finding the Miller indices."
+    },
+    {
+      "id": "SOLID-004",
+      "type": "phrase",
+      "category": "SOLID",
+      "de": "Achtet auf den Unterschied zwischen Theta und Zwei-Theta.",
+      "en": "Be careful to distinguish between theta and two theta.",
+      "alternatives": [
+        "Don't confuse theta with two theta."
+      ],
+      "example_en": "In a conventional powder diffraction pattern, the horizontal axis is usually labelled two theta."
+    },
+    {
+      "id": "SOLID-005",
+      "type": "phrase",
+      "category": "SOLID",
+      "de": "Adsorption findet an der Oberfläche statt.",
+      "en": "Adsorption takes place at the surface.",
+      "alternatives": [
+        "Adsorption is a surface process."
+      ]
+    },
+    {
+      "id": "MATH-001",
+      "type": "phrase",
+      "category": "MATH",
+      "de": "Stellen wir die Gleichung nach k um.",
+      "en": "Let's rearrange the equation to make k the subject.",
+      "alternatives": [
+        "Let's solve the equation for k."
+      ]
+    },
+    {
+      "id": "MATH-002",
+      "type": "phrase",
+      "category": "MATH",
+      "de": "Setzt die Werte ein und prüft die Einheiten.",
+      "en": "Substitute the values and check the units.",
+      "alternatives": [
+        "Plug in the values and check the units."
+      ],
+      "example_en": "Substitute the values only after you've converted them to consistent units.",
+      "scenario_de": "Eine Gruppe möchte Zahlen in die Gleichung einsetzen, hat aber cm und m gemischt.",
+      "scenario_answer_en": "Before you substitute the values, convert the lengths to the same unit. Then check that the units are consistent."
+    },
+    {
+      "id": "MATH-003",
+      "type": "phrase",
+      "category": "MATH",
+      "de": "Die Größe ist umgekehrt proportional zur Quadratwurzel der Spannung.",
+      "en": "The quantity is inversely proportional to the square root of the voltage.",
+      "alternatives": [
+        "The quantity varies as one over the square root of the voltage."
+      ],
+      "example_en": "In the non-relativistic model, the de Broglie wavelength is inversely proportional to the square root of the accelerating voltage."
+    },
+    {
+      "id": "MATH-004",
+      "type": "phrase",
+      "category": "MATH",
+      "de": "Was sagt uns die Steigung des Diagramms?",
+      "en": "What does the slope of the graph tell us?",
+      "alternatives": [
+        "What can we infer from the gradient of the graph?"
+      ],
+      "usage_note_de": "Gradient ist für die Steigung einer Geraden im britischen Englisch geläufig."
+    },
+    {
+      "id": "MATH-005",
+      "type": "phrase",
+      "category": "MATH",
+      "de": "Das Ergebnis liegt in der richtigen Größenordnung.",
+      "en": "The result is of the right order of magnitude.",
+      "alternatives": [
+        "The result is on the right scale."
+      ]
+    },
+    {
+      "id": "MATH-006",
+      "type": "phrase",
+      "category": "MATH",
+      "de": "Rechnet von Energie pro Teilchen in Energie pro Mol um.",
+      "en": "Convert from energy per particle to energy per mole.",
+      "alternatives": [
+        "Express the energy on a per-mole rather than a per-particle basis."
+      ],
+      "example_en": "Multiply the energy per particle by the Avogadro constant to obtain the molar energy in consistent units."
+    }
+  ]
+}

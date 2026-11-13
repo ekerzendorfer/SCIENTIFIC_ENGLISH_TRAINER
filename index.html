@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#12272d">
+<title>Scientific English Trainer</title>
+<style>
+:root{color-scheme:light;--ink:#12272d;--muted:#4f6369;--paper:#f4f6f2;--panel:#fff;--line:#d6e0da;--accent:#005c50;--soft:#e3f3ed}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:1rem/1.55 system-ui,sans-serif}
+[hidden]{display:none!important}button,select,input{font:inherit;color:inherit}button,select,input[type=search]{min-height:46px;border:1px solid #a7b9b2;border-radius:.65rem;background:var(--panel);padding:.55rem .75rem}
+button{cursor:pointer;font-weight:650}button:disabled{cursor:default;opacity:.65}button:hover:not(:disabled){background:var(--soft)}button.primary{background:var(--accent);border-color:var(--accent);color:white}button.primary:hover:not(:disabled){background:#00463d}
+:focus-visible{outline:3px solid #376df0;outline-offset:3px}a{color:var(--accent)}
+header{background:var(--ink);color:white;border-bottom:5px solid #69baa5}.wrap{width:min(100% - 2rem, 820px);margin-inline:auto}
+header .wrap{padding:1.55rem 0 1.65rem}.brand{margin:0;color:#a9e6d5;font-size:.76rem;font-weight:750;letter-spacing:.15em;text-transform:uppercase}.version{margin-left:.5rem;letter-spacing:.04em}
+h1,h2,h3,p{margin:0 0 .65rem}h1{font-size:clamp(1.7rem,5.5vw,2.65rem);line-height:1.12;margin-top:.35rem}header p:last-child{margin:0;color:#dae9e5}h2{font-size:1.35rem}h3{font-size:1.08rem}
+main{padding:1.15rem 0 2rem}.panel{padding:clamp(1rem,4vw,1.6rem);background:var(--panel);border:1px solid var(--line);border-radius:1rem;margin-bottom:1rem;box-shadow:0 4px 14px #12272d09}
+.controls{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1.5fr) minmax(0,1fr);gap:.75rem;margin:.95rem 0}.controls label,.search-label{display:grid;gap:.25rem;font-size:.86rem;font-weight:700}.controls select,.search-label input{width:100%;font-weight:450}
+.row{display:flex;gap:.55rem;align-items:center;flex-wrap:wrap}.row.spread{justify-content:space-between}.muted{color:var(--muted)}.small{font-size:.87rem}.stats{display:flex;flex-wrap:wrap;gap:.45rem 1rem;margin:.65rem 0}.chip{display:inline-block;border-radius:2rem;padding:.15rem .62rem;background:var(--soft);color:#00463d;font-size:.82rem;font-weight:700}
+.prompt{font-size:clamp(1.25rem,4.5vw,1.75rem);font-weight:700;line-height:1.4;overflow-wrap:anywhere;margin:.85rem 0}.answer{background:#eef6f2;border-left:4px solid #57a990;border-radius:.4rem .75rem .75rem .4rem;padding:.9rem 1rem;margin:1rem 0}.answer-text{font-size:1.16rem;font-weight:650}.answer p:last-child{margin-bottom:0}
+progress{width:100%;height:.52rem;display:block;margin:.75rem 0;accent-color:var(--accent)}.notice{background:#fff4df;color:#603b13;padding:.55rem .75rem;border-radius:.6rem}
+summary{cursor:pointer;font-weight:700;padding:.3rem 0}details p{margin-top:.55rem}.result-list{padding:0;list-style:none;margin:.7rem 0 0}.result-list li{padding:.75rem 0;border-top:1px solid var(--line)}.result-list p{margin:.12rem 0}
+footer{padding:.05rem .2rem;color:var(--muted);font-size:.82rem}.focus{scroll-margin-top:1rem}.score-row button{flex:1 1 auto}#storage-message{margin-bottom:.85rem}
+@media(max-width:590px){.controls{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.controls label:first-child{grid-column:1/-1}}
+@media(max-width:345px){.controls{grid-template-columns:minmax(0,1fr)}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <p class="brand">Scientific English <span class="version">v0.1</span></p>
+  <h1>Erklären. Auf Englisch.</h1>
+  <p>Kurze Sprechübungen für Physical Chemistry II.</p>
+</div></header>
+<main class="wrap">
+<p id="storage-message" class="notice small" role="status" hidden></p>
+<p id="load-error" class="panel notice" role="alert" hidden></p>
+<div id="app" hidden>
+<section class="panel" id="setup" aria-labelledby="setup-title">
+  <h2 id="setup-title" tabindex="-1">Deine Übungsrunde</h2>
+  <p class="muted">Sag die Antwort zuerst laut. Decke sie dann auf und bewerte, wie sicher du sie formulieren konntest.</p>
+  <div class="controls">
+    <label>Thema<select id="category"><option value="">Alle Themen</option></select></label>
+    <label>Modus<select id="mode">
+      <option value="speak">Aktiv sprechen · DE → EN</option>
+      <option value="recognise">Verstehen · EN → DE</option>
+      <option value="scenario">Hörsaal-Rollenspiel</option>
+    </select></label>
+    <label>Rundengröße<select id="limit"><option value="5">5 Karten</option><option value="10">10 Karten</option></select></label>
+  </div>
+  <div class="stats muted small" id="stats" aria-live="polite"></div>
+  <div class="row">
+    <button type="button" class="primary" id="start">Fällige &amp; neue üben</button>
+    <button type="button" id="free">Auch bereits geübte</button>
+  </div>
+</section>
+
+<section class="panel" id="practice" aria-labelledby="prompt" hidden>
+  <div class="row spread"><span id="topic" class="chip"></span><span id="position" class="small muted"></span></div>
+  <progress id="progress" value="0" max="5" aria-label="Bearbeitete Karten der Runde"></progress>
+  <p id="instruction" class="small muted"></p>
+  <h2 id="prompt" class="prompt focus" tabindex="-1"></h2>
+  <div class="row">
+    <button type="button" class="primary" id="reveal">Antwort aufdecken</button>
+    <button type="button" id="hear-prompt" hidden>Englisch anhören</button>
+  </div>
+  <div class="answer" id="answer" hidden>
+    <h3 id="answer-title" class="focus" tabindex="-1">Musterantwort</h3>
+    <p id="answer-text" class="answer-text"></p>
+    <p id="alternatives" lang="en" hidden></p>
+    <p id="example" lang="en" class="small" hidden></p>
+    <p id="note" class="muted small" hidden></p>
+    <button type="button" id="hear-answer" hidden>Englisch anhören</button>
+  </div>
+  <div id="ratings" hidden>
+    <p class="small muted">Bewerte deine eigene Formulierung. Sinngemäß richtige Varianten zählen.</p>
+    <div class="row score-row">
+      <button type="button" data-rating="again">Nicht gewusst</button>
+      <button type="button" data-rating="hard">Unsicher</button>
+      <button type="button" class="primary" data-rating="good">Gewusst</button>
+    </div>
+  </div>
+  <p class="small" id="audio-message" role="status" hidden></p>
+  <div class="row" style="margin-top:.9rem"><button type="button" id="stop">Zurück zur Übersicht</button></div>
+</section>
+
+<section class="panel" id="done" aria-labelledby="done-title" hidden>
+  <h2 id="done-title" class="focus" tabindex="-1">Runde abgeschlossen</h2>
+  <p id="summary"></p>
+  <div class="row"><button type="button" id="back" class="primary">Neue Runde auswählen</button></div>
+</section>
+
+<details class="panel" id="glossary"><summary>Glossar nachschlagen</summary>
+  <p class="small muted">Suche nach einer deutschen oder englischen Wendung. Ohne Suchbegriff siehst du die Karten zum ausgewählten Thema.</p>
+  <label class="search-label">Suchbegriff<input id="search" type="search" placeholder="z. B. momentum oder Wellenfunktion"></label>
+  <p id="search-count" class="small muted" role="status"></p>
+  <ul class="result-list" id="results"></ul>
+</details>
+
+<details class="panel" id="backup"><summary>Lernstand sichern oder übertragen</summary>
+  <p class="small muted">Der Lernstand bleibt in diesem Browser. Zum Wechsel auf ein anderes Gerät exportierst du ihn hier und importierst die Datei dort. Pro Karte und Modus bleibt der jeweils neuere Stand erhalten.</p>
+  <div class="row"><button type="button" id="export">JSON exportieren</button>
+    <button type="button" id="import">JSON importieren</button>
+    <input id="file" type="file" accept=".json,application/json" hidden>
+  </div>
+  <p id="backup-message" class="small" role="status"></p>
+</details>
+</div>
+<footer>Ohne Anmeldung. Die App nimmt kein Audio auf. Die Vorlesefunktion nutzt, falls verfügbar, die Sprachausgabe des Browsers.</footer>
+</main>
+<!-- OFFLINE_DATA -->
+<script>
+'use strict';
+const $=id=>document.getElementById(id);
+const modes=['speak','recognise','scenario'];
+const key='scientific-english-trainer:progress:v1';
+const intervals=[3,7,14,30];
+const day=86400000;
+let deck, marks={}, active=null, revealed=false, config=null, pending=[], retried=new Set(), finished=new Map(), total=0;
+const canSpeak='speechSynthesis' in window && 'SpeechSynthesisUtterance' in window;
+function setText(id,text){const el=$(id);el.textContent=text||'';el.hidden=!text}
+function stamp(card,mode){return mode+'/'+card.id}
+function record(card,mode){return marks[stamp(card,mode)]}
+function due(card,mode){return (record(card,mode)?.due ?? 0)<=Date.now()}
+function writeMarks(){
+  try {localStorage.setItem(key,JSON.stringify(marks));return true}
+  catch {setText('storage-message','Der Browser speichert den Lernstand nicht dauerhaft. Bitte vor dem Schließen exportieren.');return false}
+}
+function validateDeck(data){
+  const ids=new Set();
+  if(data?.schema_version!==1 || !data.categories || !Array.isArray(data.entries) || !data.entries.length) throw Error('Unbekanntes Glossarformat.');
+  for(const c of data.entries){
+    if(typeof c.id!=='string' || !/^[A-Z]+-\d+$/.test(c.id) || ids.has(c.id) || !Object.hasOwn(data.categories,c.category) || c.type!=='phrase' || typeof c.de!=='string' || !c.de.trim() || typeof c.en!=='string' || !c.en.trim() ||
+      (c.alternatives && (!Array.isArray(c.alternatives)||c.alternatives.some(a=>typeof a!=='string'||!a.trim()))) ||
+      Boolean(c.scenario_de)!==Boolean(c.scenario_answer_en)) throw Error('Ungültige Karte im Glossar.');
+    ids.add(c.id);
+  }
+  return data;
+}
+function validateBackup(saved){
+  if(saved?.format!=='scientific-english-trainer' || saved.version!==1 || !saved.records || typeof saved.records!=='object' || Array.isArray(saved.records)) throw Error('Das ist keine passende Lernstanddatei.');
+  const known=new Set(deck.entries.flatMap(c=>modes.filter(m=>m!=='scenario'||c.scenario_de).map(m=>stamp(c,m))));
+  const validated={};
+  for(const [k,v] of Object.entries(saved.records)){
+    if(!known.has(k))continue;
+    if(!v || !Number.isSafeInteger(v.due) || v.due<0 || v.due>8640000000000000 || !Number.isSafeInteger(v.updated) || v.updated<0 || v.updated>8640000000000000 ||
+       !Number.isInteger(v.streak) || v.streak<0 || v.streak>4 || !['again','hard','good'].includes(v.rating)) throw Error('Mindestens eine Karte hat einen ungültigen Lernstand.');
+    validated[k]={due:v.due,updated:v.updated,streak:v.streak,rating:v.rating};
+  }
+  return validated;
+}
+function selection(){return {category:$('category').value,mode:$('mode').value,limit:Number($('limit').value)}}
+function pool(cfg){return deck.entries.filter(c=>(!cfg.category||c.category===cfg.category)&&(cfg.mode!=='scenario'||c.scenario_de))}
+function updateStats(){
+  const cfg=selection(), cards=pool(cfg), fresh=cards.filter(c=>!record(c,cfg.mode)).length;
+  const review=cards.filter(c=>record(c,cfg.mode)&&due(c,cfg.mode)).length;
+  $('stats').textContent=cards.length ? fresh+' neu · '+review+' fällig · '+cards.length+' im Filter' : 'Für dieses Thema gibt es in diesem Modus noch keine Karten.';
+  $('start').disabled=fresh+review===0;
+  $('free').disabled=cards.length===0;
+}
+function shuffled(cards){
+  const list=[...cards];
+  for(let i=list.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[list[i],list[j]]=[list[j],list[i]]}
+  return list;
+}
+function startRound(includeAll){
+  config=selection();
+  const cards=shuffled(pool(config));
+  const scheduled=cards.filter(c=>record(c,config.mode)&&due(c,config.mode)).sort((a,b)=>record(a,config.mode).due-record(b,config.mode).due);
+  const fresh=cards.filter(c=>!record(c,config.mode));
+  const later=cards.filter(c=>!due(c,config.mode));
+  pending=(includeAll ? [...scheduled,...fresh,...later] : [...scheduled,...fresh]).slice(0,config.limit).map(card=>({card,retry:false}));
+  if(!pending.length)return;
+  total=pending.length;
+  finished=new Map();
+  retried=new Set();
+  $('setup').hidden=true;$('done').hidden=true;$('practice').hidden=false;
+  next();
+}
+function stopAudio(){if(canSpeak)window.speechSynthesis.cancel()}
+function next(){
+  stopAudio();
+  active=pending.shift();
+  if(!active){
+    $('practice').hidden=true;$('done').hidden=false;
+    const values=[...finished.values()];
+    $('summary').textContent=total+' Karten bearbeitet. Letzte Bewertung je Karte: '+values.filter(x=>x==='good').length+' gewusst, '+values.filter(x=>x==='hard').length+' unsicher, '+values.filter(x=>x==='again').length+' nicht gewusst.';
+    $('done-title').focus();
+    return;
+  }
+  revealed=false;
+  const {card,retry}=active;
+  $('topic').textContent=deck.categories[card.category];
+  $('position').textContent=retry ? 'Wiederholung · '+finished.size+' von '+total+' bearbeitet' : 'Karte '+(finished.size+1)+' von '+total;
+  $('progress').max=total;$('progress').value=finished.size;
+  const mode=config.mode;
+  $('instruction').textContent=mode==='scenario'?'Antworte auf Englisch wie im Hörsaal. Zwei bis drei Sätze reichen.':mode==='speak'?'Formuliere laut auf Englisch.':'Erkläre die Bedeutung auf Deutsch.';
+  $('prompt').textContent=mode==='scenario'?card.scenario_de:mode==='speak'?card.de:card.en;
+  $('prompt').lang=mode==='recognise'?'en':'de';
+  $('reveal').hidden=false;$('answer').hidden=true;$('ratings').hidden=true;
+  $('hear-prompt').hidden=!canSpeak||mode!=='recognise';$('hear-answer').hidden=true;
+  setText('audio-message','');
+  $('prompt').focus();
+}
+function reveal(){
+  if(!active||revealed)return;
+  revealed=true;
+  const {card}=active, mode=config.mode;
+  $('answer-title').textContent=mode==='recognise'?'Bedeutung':'Musterantwort';
+  $('answer-text').textContent=mode==='scenario'?card.scenario_answer_en:mode==='speak'?card.en:card.de;
+  $('answer-text').lang=mode==='recognise'?'de':'en';
+  setText('alternatives',mode==='speak'&&card.alternatives?.length?'↳ '+card.alternatives.join(' / '):'');
+  setText('example',mode!=='scenario'&&card.example_en?'“'+card.example_en+'”':'');
+  setText('note',card.usage_note_de||'');
+  $('hear-answer').hidden=!canSpeak||mode==='recognise';
+  $('answer').hidden=false;$('ratings').hidden=false;$('reveal').hidden=true;
+  $('answer-title').focus();
+}
+function rate(rating){
+  if(!active||!revealed)return;
+  const {card,retry}=active, mode=config.mode;
+  const old=record(card,mode);
+  const streak=rating==='good'?Math.min((old?.streak??0)+1,4):0;
+  const now=Date.now();
+  // A first miss schedules tomorrow and one immediate retry. A successful
+  // same-round retry still leaves the card due tomorrow.
+  const days=retry||rating==='again'?1:rating==='hard'?2:intervals[streak-1];
+  marks[stamp(card,mode)]={streak:retry?0:streak,rating,due:now+days*day,updated:now};
+  if(rating==='again'&&!retried.has(card.id)){
+    retried.add(card.id);pending.push({card,retry:true});
+  }
+  finished.set(card.id,rating);
+  writeMarks();
+  next();
+}
+function showSetup(){
+  stopAudio();active=null;pending=[];
+  $('practice').hidden=true;$('done').hidden=true;$('setup').hidden=false;
+  updateStats();$('setup-title').focus();
+}
+function search(){
+  const query=$('search').value.trim().toLocaleLowerCase();
+  const cfg=selection();
+  const found=deck.entries.filter(c=>(!cfg.category||c.category===cfg.category) &&
+    (!query||[c.de,c.en,...(c.alternatives??[]),c.example_en,c.usage_note_de].filter(Boolean).join(' ').toLocaleLowerCase().includes(query)));
+  $('search-count').textContent=found.length+' Treffer';
+  const list=found.map(c=>{
+    const li=document.createElement('li'), en=document.createElement('p'), de=document.createElement('p');
+    en.lang='en';en.textContent=c.en;de.className='small muted';de.textContent=c.de;
+    li.append(en,de);return li;
+  });
+  $('results').replaceChildren(...list);
+}
+function speak(text){
+  if(!canSpeak)return;
+  stopAudio();
+  setText('audio-message','');
+  const utterance=new SpeechSynthesisUtterance(text);
+  const voices=speechSynthesis.getVoices();
+  const english=voices.find(v=>v.lang.toLowerCase()==='en-gb')??voices.find(v=>/^en(?:-|$)/i.test(v.lang));
+  utterance.lang=english?.lang??'en-GB';
+  if(english)utterance.voice=english;
+  utterance.rate=.93;
+  utterance.onerror=e=>{if(!['interrupted','canceled'].includes(e.error))setText('audio-message','Die englische Vorlesestimme ist auf diesem Gerät gerade nicht verfügbar.')};
+  speechSynthesis.speak(utterance);
+}
+function exportMarks(){
+  const file=new Blob([JSON.stringify({format:'scientific-english-trainer',version:1,records:marks},null,2)+'\n'],{type:'application/json'});
+  const url=URL.createObjectURL(file), a=document.createElement('a');
+  a.href=url;a.download='scientific-english-lernstand.json';document.body.append(a);a.click();a.remove();
+  setTimeout(()=>URL.revokeObjectURL(url),2000);
+  $('backup-message').textContent='Die Datei enthält nur den Lernstand, keine Sprachaufnahmen.';
+}
+async function importMarks(){
+  const f=$('file').files[0];
+  if(!f)return;
+  try {
+    if(f.size>1000000)throw Error('Die Datei ist zu groß.');
+    const incoming=validateBackup(JSON.parse(await f.text()));
+    let changed=0;
+    for(const [k,v] of Object.entries(incoming)){
+      if(!marks[k]||v.updated>marks[k].updated){marks[k]=v;changed++}
+    }
+    const saved=writeMarks();updateStats();
+    $('backup-message').textContent=changed+' Kartenstände übernommen. '+(saved?'':'Dauerhaftes Speichern ist in diesem Browser gerade nicht möglich.');
+  } catch(e) {$('backup-message').textContent='Import nicht möglich. '+(e instanceof SyntaxError?'Die Datei enthält kein gültiges JSON.':e.message)}
+  finally {$('file').value=''}
+}
+async function init(){
+  try {
+    const offline=$('offline-data');
+    if(offline)deck=validateDeck(JSON.parse(offline.textContent));
+    else {
+      const res=await fetch('./data/glossary.json');
+      if(!res.ok)throw Error('Glossar nicht gefunden.');
+      deck=validateDeck(await res.json());
+    }
+  }catch{
+    setText('load-error','Das Glossar konnte nicht geladen werden. Öffne die App über GitHub Pages oder einen lokalen Webserver.');return;
+  }
+  try{
+    const raw=localStorage.getItem(key);
+    if(raw)marks=validateBackup({format:'scientific-english-trainer',version:1,records:JSON.parse(raw)});
+  }catch{setText('storage-message','Der gespeicherte Lernstand war nicht lesbar. Du kannst eine Sicherungsdatei importieren.')}
+  for(const [id,label] of Object.entries(deck.categories))$('category').add(new Option(label,id));
+  $('category').addEventListener('change',()=>{updateStats();search()});
+  $('mode').addEventListener('change',updateStats);
+  $('search').addEventListener('input',search);
+  $('start').onclick=()=>startRound(false);$('free').onclick=()=>startRound(true);
+  $('reveal').onclick=reveal;$('stop').onclick=showSetup;$('back').onclick=showSetup;
+  for(const b of document.querySelectorAll('[data-rating]'))b.onclick=()=>rate(b.dataset.rating);
+  $('hear-prompt').onclick=()=>speak(active.card.en);
+  $('hear-answer').onclick=()=>speak(config.mode==='scenario'?active.card.scenario_answer_en:active.card.en);
+  $('export').onclick=exportMarks;$('import').onclick=()=>$('file').click();$('file').onchange=importMarks;
+  updateStats();search();$('app').hidden=false;
+}
+init();
+</script>
+</body>
+</html>
