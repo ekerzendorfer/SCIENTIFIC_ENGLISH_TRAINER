@@ -12,3 +12,9 @@
 - [OpenStax, Molecular Orbital Theory](https://openstax.org/books/chemistry-atoms-first/pages/5-4-molecular-orbital-theory)
 
 Die Karten und Rollenspiele sind eigenständig formuliert. Die Themen sind keine Festlegung der späteren IMC-Übungseinheiten.
+
+## Fachvokabeln zur Spektroskopie
+
+- Mit `type: "term"` einzelne Begriffe oder feste Fachausdrücke erfassen, keine Übungssätze.
+- Unter `group` ein Teilgebiet wählen und gängige englische Varianten in `alternatives` ablegen. Wo dieselbe Übersetzung irreführen könnte, den Kontext im Begriff kenntlich machen.
+- Referenzen für terminologische Stolperstellen: [IUPAC Beer–Lambert law](https://goldbook.iupac.org/terms/view/B00626), [IUPAC Transmittance](https://goldbook.iupac.org/terms/view/T06484), [IUPAC Chemical shift](https://goldbook.iupac.org/terms/view/C01036), [IUPAC Magnetic equivalence](https://goldbook.iupac.org/terms/view/M03681).

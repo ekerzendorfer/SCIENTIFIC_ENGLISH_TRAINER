@@ -589,6 +589,1051 @@
         "Express the energy on a per-mole rather than a per-particle basis."
       ],
       "example_en": "Multiply the energy per particle by the Avogadro constant to obtain the molar energy in consistent units."
+    },
+    {
+      "id": "VOCSPEC-001",
+      "type": "term",
+      "category": "SPEC",
+      "group": "BASICS",
+      "de": "Spektrum",
+      "en": "spectrum",
+      "usage_note_de": "Plural: spectra."
+    },
+    {
+      "id": "VOCSPEC-002",
+      "type": "term",
+      "category": "SPEC",
+      "group": "BASICS",
+      "de": "elektromagnetische Strahlung",
+      "en": "electromagnetic radiation"
+    },
+    {
+      "id": "VOCSPEC-003",
+      "type": "term",
+      "category": "SPEC",
+      "group": "BASICS",
+      "de": "Wellenlänge",
+      "en": "wavelength"
+    },
+    {
+      "id": "VOCSPEC-004",
+      "type": "term",
+      "category": "SPEC",
+      "group": "BASICS",
+      "de": "Frequenz",
+      "en": "frequency"
+    },
+    {
+      "id": "VOCSPEC-005",
+      "type": "term",
+      "category": "SPEC",
+      "group": "BASICS",
+      "de": "Wellenzahl",
+      "en": "wavenumber",
+      "alternatives": [
+        "wave number"
+      ],
+      "usage_note_de": "Kehrwert der Wellenlänge, in der Spektroskopie oft in cm⁻¹."
+    },
+    {
+      "id": "VOCSPEC-006",
+      "type": "term",
+      "category": "SPEC",
+      "group": "BASICS",
+      "de": "Photonenenergie",
+      "en": "photon energy"
+    },
+    {
+      "id": "VOCSPEC-007",
+      "type": "term",
+      "category": "SPEC",
+      "group": "BASICS",
+      "de": "Energieniveau",
+      "en": "energy level"
+    },
+    {
+      "id": "VOCSPEC-008",
+      "type": "term",
+      "category": "SPEC",
+      "group": "BASICS",
+      "de": "Grundzustand",
+      "en": "ground state"
+    },
+    {
+      "id": "VOCSPEC-009",
+      "type": "term",
+      "category": "SPEC",
+      "group": "BASICS",
+      "de": "angeregter Zustand",
+      "en": "excited state"
+    },
+    {
+      "id": "VOCSPEC-010",
+      "type": "term",
+      "category": "SPEC",
+      "group": "BASICS",
+      "de": "Übergang",
+      "en": "transition"
+    },
+    {
+      "id": "VOCSPEC-011",
+      "type": "term",
+      "category": "SPEC",
+      "group": "BASICS",
+      "de": "Übergangsenergie",
+      "en": "transition energy"
+    },
+    {
+      "id": "VOCSPEC-012",
+      "type": "term",
+      "category": "SPEC",
+      "group": "BASICS",
+      "de": "Auswahlregel",
+      "en": "selection rule"
+    },
+    {
+      "id": "VOCSPEC-013",
+      "type": "term",
+      "category": "SPEC",
+      "group": "BASICS",
+      "de": "erlaubter Übergang",
+      "en": "allowed transition"
+    },
+    {
+      "id": "VOCSPEC-014",
+      "type": "term",
+      "category": "SPEC",
+      "group": "BASICS",
+      "de": "verbotener Übergang",
+      "en": "forbidden transition",
+      "usage_note_de": "„Verboten“ bezieht sich auf eine Auswahlregel und die zugrunde liegende Näherung."
+    },
+    {
+      "id": "VOCSPEC-015",
+      "type": "term",
+      "category": "SPEC",
+      "group": "BASICS",
+      "de": "Absorption",
+      "en": "absorption"
+    },
+    {
+      "id": "VOCSPEC-016",
+      "type": "term",
+      "category": "SPEC",
+      "group": "BASICS",
+      "de": "Emission",
+      "en": "emission"
+    },
+    {
+      "id": "VOCSPEC-017",
+      "type": "term",
+      "category": "SPEC",
+      "group": "BASICS",
+      "de": "Spektrallinie",
+      "en": "spectral line"
+    },
+    {
+      "id": "VOCSPEC-018",
+      "type": "term",
+      "category": "SPEC",
+      "group": "BASICS",
+      "de": "Absorptionsbande",
+      "en": "absorption band"
+    },
+    {
+      "id": "VOCSPEC-019",
+      "type": "term",
+      "category": "SPEC",
+      "group": "BASICS",
+      "de": "Linienbreite",
+      "en": "linewidth",
+      "alternatives": [
+        "line width"
+      ]
+    },
+    {
+      "id": "VOCSPEC-020",
+      "type": "term",
+      "category": "SPEC",
+      "group": "BASICS",
+      "de": "Halbwertsbreite",
+      "en": "full width at half maximum (FWHM)",
+      "alternatives": [
+        "FWHM"
+      ],
+      "usage_note_de": "Gesamte Breite bei halber Höhe, nicht die halbe Breite (HWHM)."
+    },
+    {
+      "id": "VOCSPEC-021",
+      "type": "term",
+      "category": "SPEC",
+      "group": "BASICS",
+      "de": "spektrale Auflösung",
+      "en": "spectral resolution"
+    },
+    {
+      "id": "VOCSPEC-022",
+      "type": "term",
+      "category": "SPEC",
+      "group": "BASICS",
+      "de": "Grundlinie",
+      "en": "baseline"
+    },
+    {
+      "id": "VOCSPEC-023",
+      "type": "term",
+      "category": "SPEC",
+      "group": "BASICS",
+      "de": "Signal-Rausch-Verhältnis",
+      "en": "signal-to-noise ratio",
+      "alternatives": [
+        "SNR"
+      ]
+    },
+    {
+      "id": "VOCSPEC-024",
+      "type": "term",
+      "category": "SPEC",
+      "group": "UVVIS",
+      "de": "UV/Vis-Spektroskopie",
+      "en": "UV–visible spectroscopy",
+      "alternatives": [
+        "UV–Vis spectroscopy"
+      ]
+    },
+    {
+      "id": "VOCSPEC-025",
+      "type": "term",
+      "category": "SPEC",
+      "group": "UVVIS",
+      "de": "Extinktion (dekadisch, A)",
+      "en": "absorbance",
+      "alternatives": [
+        "decadic absorbance"
+      ],
+      "usage_note_de": "A = −log₁₀(T), mit T als Anteil und nicht als Prozentwert."
+    },
+    {
+      "id": "VOCSPEC-026",
+      "type": "term",
+      "category": "SPEC",
+      "group": "UVVIS",
+      "de": "Transmissionsgrad (T)",
+      "en": "transmittance",
+      "alternatives": [
+        "transmission factor"
+      ],
+      "usage_note_de": "Der Anteil durchgelassener Strahlungsleistung. Transmission bezeichnet auch den Vorgang."
+    },
+    {
+      "id": "VOCSPEC-027",
+      "type": "term",
+      "category": "SPEC",
+      "group": "UVVIS",
+      "de": "einfallende Strahlung",
+      "en": "incident radiation"
+    },
+    {
+      "id": "VOCSPEC-028",
+      "type": "term",
+      "category": "SPEC",
+      "group": "UVVIS",
+      "de": "durchgelassene Strahlung",
+      "en": "transmitted radiation"
+    },
+    {
+      "id": "VOCSPEC-029",
+      "type": "term",
+      "category": "SPEC",
+      "group": "UVVIS",
+      "de": "optische Schichtdicke",
+      "en": "optical path length",
+      "alternatives": [
+        "absorption path length",
+        "path length"
+      ]
+    },
+    {
+      "id": "VOCSPEC-030",
+      "type": "term",
+      "category": "SPEC",
+      "group": "UVVIS",
+      "de": "molarer dekadischer Absorptionskoeffizient (ε)",
+      "en": "molar decadic absorption coefficient",
+      "alternatives": [
+        "molar absorption coefficient",
+        "molar absorptivity",
+        "molar extinction coefficient"
+      ],
+      "usage_note_de": "Im Kontext des Beer–Lambert-Gesetzes."
+    },
+    {
+      "id": "VOCSPEC-031",
+      "type": "term",
+      "category": "SPEC",
+      "group": "UVVIS",
+      "de": "Lambert-Beer-Gesetz",
+      "en": "Beer–Lambert law",
+      "alternatives": [
+        "Lambert–Beer law",
+        "Beer–Lambert–Bouguer law"
+      ]
+    },
+    {
+      "id": "VOCSPEC-032",
+      "type": "term",
+      "category": "SPEC",
+      "group": "UVVIS",
+      "de": "Absorptionsmaximum",
+      "en": "absorption maximum"
+    },
+    {
+      "id": "VOCSPEC-033",
+      "type": "term",
+      "category": "SPEC",
+      "group": "UVVIS",
+      "de": "monochromatisches Licht",
+      "en": "monochromatic light"
+    },
+    {
+      "id": "VOCSPEC-034",
+      "type": "term",
+      "category": "SPEC",
+      "group": "UVVIS",
+      "de": "Küvette",
+      "en": "cuvette"
+    },
+    {
+      "id": "VOCSPEC-035",
+      "type": "term",
+      "category": "SPEC",
+      "group": "UVVIS",
+      "de": "Blindprobe",
+      "en": "blank",
+      "alternatives": [
+        "blank sample"
+      ]
+    },
+    {
+      "id": "VOCSPEC-036",
+      "type": "term",
+      "category": "SPEC",
+      "group": "UVVIS",
+      "de": "Kalibrierkurve",
+      "en": "calibration curve"
+    },
+    {
+      "id": "VOCSPEC-037",
+      "type": "term",
+      "category": "SPEC",
+      "group": "UVVIS",
+      "de": "elektronischer Übergang",
+      "en": "electronic transition"
+    },
+    {
+      "id": "VOCSPEC-038",
+      "type": "term",
+      "category": "SPEC",
+      "group": "UVVIS",
+      "de": "Chromophor",
+      "en": "chromophore"
+    },
+    {
+      "id": "VOCSPEC-039",
+      "type": "term",
+      "category": "SPEC",
+      "group": "ROTIR",
+      "de": "Rotationsspektroskopie",
+      "en": "rotational spectroscopy"
+    },
+    {
+      "id": "VOCSPEC-040",
+      "type": "term",
+      "category": "SPEC",
+      "group": "ROTIR",
+      "de": "Mikrowellenspektroskopie",
+      "en": "microwave spectroscopy"
+    },
+    {
+      "id": "VOCSPEC-041",
+      "type": "term",
+      "category": "SPEC",
+      "group": "ROTIR",
+      "de": "reines Rotationsspektrum",
+      "en": "pure rotational spectrum"
+    },
+    {
+      "id": "VOCSPEC-042",
+      "type": "term",
+      "category": "SPEC",
+      "group": "ROTIR",
+      "de": "starrer Rotor",
+      "en": "rigid rotor"
+    },
+    {
+      "id": "VOCSPEC-043",
+      "type": "term",
+      "category": "SPEC",
+      "group": "ROTIR",
+      "de": "Trägheitsmoment",
+      "en": "moment of inertia"
+    },
+    {
+      "id": "VOCSPEC-044",
+      "type": "term",
+      "category": "SPEC",
+      "group": "ROTIR",
+      "de": "Rotationskonstante",
+      "en": "rotational constant"
+    },
+    {
+      "id": "VOCSPEC-045",
+      "type": "term",
+      "category": "SPEC",
+      "group": "ROTIR",
+      "de": "Rotationsquantenzahl",
+      "en": "rotational quantum number"
+    },
+    {
+      "id": "VOCSPEC-046",
+      "type": "term",
+      "category": "SPEC",
+      "group": "ROTIR",
+      "de": "permanentes Dipolmoment",
+      "en": "permanent dipole moment"
+    },
+    {
+      "id": "VOCSPEC-047",
+      "type": "term",
+      "category": "SPEC",
+      "group": "ROTIR",
+      "de": "Schwingungsspektroskopie",
+      "en": "vibrational spectroscopy"
+    },
+    {
+      "id": "VOCSPEC-048",
+      "type": "term",
+      "category": "SPEC",
+      "group": "ROTIR",
+      "de": "Infrarotspektroskopie",
+      "en": "infrared spectroscopy",
+      "alternatives": [
+        "IR spectroscopy"
+      ]
+    },
+    {
+      "id": "VOCSPEC-049",
+      "type": "term",
+      "category": "SPEC",
+      "group": "ROTIR",
+      "de": "FTIR-Spektroskopie",
+      "en": "Fourier-transform infrared spectroscopy",
+      "alternatives": [
+        "FTIR spectroscopy"
+      ]
+    },
+    {
+      "id": "VOCSPEC-050",
+      "type": "term",
+      "category": "SPEC",
+      "group": "ROTIR",
+      "de": "harmonischer Oszillator",
+      "en": "harmonic oscillator"
+    },
+    {
+      "id": "VOCSPEC-051",
+      "type": "term",
+      "category": "SPEC",
+      "group": "ROTIR",
+      "de": "Anharmonizität",
+      "en": "anharmonicity"
+    },
+    {
+      "id": "VOCSPEC-052",
+      "type": "term",
+      "category": "SPEC",
+      "group": "ROTIR",
+      "de": "Kraftkonstante",
+      "en": "force constant"
+    },
+    {
+      "id": "VOCSPEC-053",
+      "type": "term",
+      "category": "SPEC",
+      "group": "ROTIR",
+      "de": "reduzierte Masse",
+      "en": "reduced mass"
+    },
+    {
+      "id": "VOCSPEC-054",
+      "type": "term",
+      "category": "SPEC",
+      "group": "ROTIR",
+      "de": "Nullpunktsenergie",
+      "en": "zero-point energy"
+    },
+    {
+      "id": "VOCSPEC-055",
+      "type": "term",
+      "category": "SPEC",
+      "group": "ROTIR",
+      "de": "Normalschwingung",
+      "en": "normal mode",
+      "alternatives": [
+        "normal mode of vibration",
+        "normal vibration"
+      ]
+    },
+    {
+      "id": "VOCSPEC-056",
+      "type": "term",
+      "category": "SPEC",
+      "group": "ROTIR",
+      "de": "Grundschwingungsübergang",
+      "en": "fundamental vibrational transition",
+      "alternatives": [
+        "fundamental transition"
+      ]
+    },
+    {
+      "id": "VOCSPEC-057",
+      "type": "term",
+      "category": "SPEC",
+      "group": "ROTIR",
+      "de": "Oberton",
+      "en": "overtone"
+    },
+    {
+      "id": "VOCSPEC-058",
+      "type": "term",
+      "category": "SPEC",
+      "group": "ROTIR",
+      "de": "IR-aktiv",
+      "en": "IR-active",
+      "alternatives": [
+        "infrared-active"
+      ]
+    },
+    {
+      "id": "VOCSPEC-059",
+      "type": "term",
+      "category": "SPEC",
+      "group": "ROTIR",
+      "de": "Änderung des Dipolmoments",
+      "en": "change in dipole moment"
+    },
+    {
+      "id": "VOCSPEC-060",
+      "type": "term",
+      "category": "SPEC",
+      "group": "ROTIR",
+      "de": "Streckschwingung",
+      "en": "stretching vibration",
+      "alternatives": [
+        "stretching mode"
+      ]
+    },
+    {
+      "id": "VOCSPEC-061",
+      "type": "term",
+      "category": "SPEC",
+      "group": "ROTIR",
+      "de": "Biegeschwingung",
+      "en": "bending vibration",
+      "alternatives": [
+        "bending mode",
+        "deformation vibration"
+      ]
+    },
+    {
+      "id": "VOCSPEC-062",
+      "type": "term",
+      "category": "SPEC",
+      "group": "ROTIR",
+      "de": "symmetrische Streckschwingung",
+      "en": "symmetric stretch",
+      "alternatives": [
+        "symmetric stretching vibration"
+      ]
+    },
+    {
+      "id": "VOCSPEC-063",
+      "type": "term",
+      "category": "SPEC",
+      "group": "ROTIR",
+      "de": "asymmetrische Streckschwingung",
+      "en": "asymmetric stretch",
+      "alternatives": [
+        "asymmetric stretching vibration",
+        "antisymmetric stretch"
+      ]
+    },
+    {
+      "id": "VOCSPEC-064",
+      "type": "term",
+      "category": "SPEC",
+      "group": "ROTIR",
+      "de": "Fingerprint-Bereich",
+      "en": "fingerprint region"
+    },
+    {
+      "id": "VOCSPEC-065",
+      "type": "term",
+      "category": "SPEC",
+      "group": "PHOTO",
+      "de": "Lumineszenz",
+      "en": "luminescence"
+    },
+    {
+      "id": "VOCSPEC-066",
+      "type": "term",
+      "category": "SPEC",
+      "group": "PHOTO",
+      "de": "Fluoreszenz",
+      "en": "fluorescence"
+    },
+    {
+      "id": "VOCSPEC-067",
+      "type": "term",
+      "category": "SPEC",
+      "group": "PHOTO",
+      "de": "Phosphoreszenz",
+      "en": "phosphorescence"
+    },
+    {
+      "id": "VOCSPEC-068",
+      "type": "term",
+      "category": "SPEC",
+      "group": "PHOTO",
+      "de": "Chemilumineszenz",
+      "en": "chemiluminescence"
+    },
+    {
+      "id": "VOCSPEC-069",
+      "type": "term",
+      "category": "SPEC",
+      "group": "PHOTO",
+      "de": "Anregungsspektrum",
+      "en": "excitation spectrum"
+    },
+    {
+      "id": "VOCSPEC-070",
+      "type": "term",
+      "category": "SPEC",
+      "group": "PHOTO",
+      "de": "Emissionsspektrum",
+      "en": "emission spectrum"
+    },
+    {
+      "id": "VOCSPEC-071",
+      "type": "term",
+      "category": "SPEC",
+      "group": "PHOTO",
+      "de": "strahlungsloser Übergang",
+      "en": "non-radiative transition",
+      "alternatives": [
+        "radiationless transition"
+      ]
+    },
+    {
+      "id": "VOCSPEC-072",
+      "type": "term",
+      "category": "SPEC",
+      "group": "PHOTO",
+      "de": "Singulettzustand",
+      "en": "singlet state"
+    },
+    {
+      "id": "VOCSPEC-073",
+      "type": "term",
+      "category": "SPEC",
+      "group": "PHOTO",
+      "de": "Triplettzustand",
+      "en": "triplet state"
+    },
+    {
+      "id": "VOCSPEC-074",
+      "type": "term",
+      "category": "SPEC",
+      "group": "PHOTO",
+      "de": "Intersystem Crossing (ISC)",
+      "en": "intersystem crossing",
+      "alternatives": [
+        "ISC"
+      ],
+      "usage_note_de": "Übergang zwischen Zuständen verschiedener Spinmultiplizität."
+    },
+    {
+      "id": "VOCSPEC-075",
+      "type": "term",
+      "category": "SPEC",
+      "group": "PHOTO",
+      "de": "Stokes-Verschiebung",
+      "en": "Stokes shift"
+    },
+    {
+      "id": "VOCSPEC-076",
+      "type": "term",
+      "category": "SPEC",
+      "group": "PHOTO",
+      "de": "Quantenausbeute",
+      "en": "quantum yield"
+    },
+    {
+      "id": "VOCSPEC-077",
+      "type": "term",
+      "category": "SPEC",
+      "group": "PHOTO",
+      "de": "Photodissoziation",
+      "en": "photodissociation"
+    },
+    {
+      "id": "VOCSPEC-078",
+      "type": "term",
+      "category": "SPEC",
+      "group": "ATOM",
+      "de": "atomares Termsymbol",
+      "en": "atomic term symbol",
+      "alternatives": [
+        "term symbol"
+      ]
+    },
+    {
+      "id": "VOCSPEC-079",
+      "type": "term",
+      "category": "SPEC",
+      "group": "ATOM",
+      "de": "Bahndrehimpuls",
+      "en": "orbital angular momentum"
+    },
+    {
+      "id": "VOCSPEC-080",
+      "type": "term",
+      "category": "SPEC",
+      "group": "ATOM",
+      "de": "Spindrehimpuls",
+      "en": "spin angular momentum"
+    },
+    {
+      "id": "VOCSPEC-081",
+      "type": "term",
+      "category": "SPEC",
+      "group": "ATOM",
+      "de": "Gesamtdrehimpuls",
+      "en": "total angular momentum"
+    },
+    {
+      "id": "VOCSPEC-082",
+      "type": "term",
+      "category": "SPEC",
+      "group": "ATOM",
+      "de": "Spinmultiplizität",
+      "en": "spin multiplicity"
+    },
+    {
+      "id": "VOCSPEC-083",
+      "type": "term",
+      "category": "SPEC",
+      "group": "ATOM",
+      "de": "Spin-Bahn-Kopplung",
+      "en": "spin–orbit coupling"
+    },
+    {
+      "id": "VOCSPEC-084",
+      "type": "term",
+      "category": "SPEC",
+      "group": "ATOM",
+      "de": "Spin-Bahn-Aufspaltung",
+      "en": "spin–orbit splitting"
+    },
+    {
+      "id": "VOCSPEC-085",
+      "type": "term",
+      "category": "SPEC",
+      "group": "ATOM",
+      "de": "Feinstruktur",
+      "en": "fine structure"
+    },
+    {
+      "id": "VOCSPEC-086",
+      "type": "term",
+      "category": "SPEC",
+      "group": "NMR",
+      "de": "Kernspinresonanzspektroskopie",
+      "en": "nuclear magnetic resonance spectroscopy",
+      "alternatives": [
+        "NMR spectroscopy"
+      ]
+    },
+    {
+      "id": "VOCSPEC-087",
+      "type": "term",
+      "category": "SPEC",
+      "group": "NMR",
+      "de": "Protonen-NMR",
+      "en": "proton NMR",
+      "alternatives": [
+        "¹H NMR",
+        "hydrogen-1 NMR"
+      ]
+    },
+    {
+      "id": "VOCSPEC-088",
+      "type": "term",
+      "category": "SPEC",
+      "group": "NMR",
+      "de": "Kernspin",
+      "en": "nuclear spin"
+    },
+    {
+      "id": "VOCSPEC-089",
+      "type": "term",
+      "category": "SPEC",
+      "group": "NMR",
+      "de": "Spinquantenzahl des Kerns",
+      "en": "nuclear spin quantum number"
+    },
+    {
+      "id": "VOCSPEC-090",
+      "type": "term",
+      "category": "SPEC",
+      "group": "NMR",
+      "de": "statisches Magnetfeld",
+      "en": "static magnetic field",
+      "usage_note_de": "Das äußere statische Feld wird in der NMR meist als B₀ bezeichnet."
+    },
+    {
+      "id": "VOCSPEC-091",
+      "type": "term",
+      "category": "SPEC",
+      "group": "NMR",
+      "de": "Hochfrequenzpuls",
+      "en": "radiofrequency pulse",
+      "alternatives": [
+        "radio-frequency pulse",
+        "RF pulse"
+      ]
+    },
+    {
+      "id": "VOCSPEC-092",
+      "type": "term",
+      "category": "SPEC",
+      "group": "NMR",
+      "de": "Larmorfrequenz",
+      "en": "Larmor frequency"
+    },
+    {
+      "id": "VOCSPEC-093",
+      "type": "term",
+      "category": "SPEC",
+      "group": "NMR",
+      "de": "Resonanzfrequenz",
+      "en": "resonance frequency"
+    },
+    {
+      "id": "VOCSPEC-094",
+      "type": "term",
+      "category": "SPEC",
+      "group": "NMR",
+      "de": "chemische Verschiebung",
+      "en": "chemical shift"
+    },
+    {
+      "id": "VOCSPEC-095",
+      "type": "term",
+      "category": "SPEC",
+      "group": "NMR",
+      "de": "Referenzsignal",
+      "en": "reference signal"
+    },
+    {
+      "id": "VOCSPEC-096",
+      "type": "term",
+      "category": "SPEC",
+      "group": "NMR",
+      "de": "Abschirmung",
+      "en": "shielding"
+    },
+    {
+      "id": "VOCSPEC-097",
+      "type": "term",
+      "category": "SPEC",
+      "group": "NMR",
+      "de": "Entschirmung",
+      "en": "deshielding"
+    },
+    {
+      "id": "VOCSPEC-098",
+      "type": "term",
+      "category": "SPEC",
+      "group": "NMR",
+      "de": "hochfeld (kleineres δ)",
+      "en": "upfield",
+      "alternatives": [
+        "at lower chemical shift"
+      ]
+    },
+    {
+      "id": "VOCSPEC-099",
+      "type": "term",
+      "category": "SPEC",
+      "group": "NMR",
+      "de": "tieffeld (größeres δ)",
+      "en": "downfield",
+      "alternatives": [
+        "at higher chemical shift"
+      ]
+    },
+    {
+      "id": "VOCSPEC-100",
+      "type": "term",
+      "category": "SPEC",
+      "group": "NMR",
+      "de": "chemisch äquivalente Kerne",
+      "en": "chemically equivalent nuclei"
+    },
+    {
+      "id": "VOCSPEC-101",
+      "type": "term",
+      "category": "SPEC",
+      "group": "NMR",
+      "de": "magnetisch äquivalente Kerne",
+      "en": "magnetically equivalent nuclei",
+      "usage_note_de": "Magnetische Äquivalenz verlangt zusätzlich identische Kopplungen zu anderen Kernen."
+    },
+    {
+      "id": "VOCSPEC-102",
+      "type": "term",
+      "category": "SPEC",
+      "group": "NMR",
+      "de": "Spin-Spin-Kopplung",
+      "en": "spin–spin coupling",
+      "alternatives": [
+        "J-coupling",
+        "scalar coupling"
+      ],
+      "usage_note_de": "Die Varianten J-coupling und scalar coupling bezeichnen die indirekte Kopplung."
+    },
+    {
+      "id": "VOCSPEC-103",
+      "type": "term",
+      "category": "SPEC",
+      "group": "NMR",
+      "de": "Kopplungskonstante (J)",
+      "en": "coupling constant",
+      "alternatives": [
+        "spin–spin coupling constant",
+        "J coupling constant"
+      ],
+      "usage_note_de": "J wird in Hz angegeben."
+    },
+    {
+      "id": "VOCSPEC-104",
+      "type": "term",
+      "category": "SPEC",
+      "group": "NMR",
+      "de": "Signalaufspaltung",
+      "en": "signal splitting",
+      "alternatives": [
+        "splitting"
+      ]
+    },
+    {
+      "id": "VOCSPEC-105",
+      "type": "term",
+      "category": "SPEC",
+      "group": "NMR",
+      "de": "Singulett (Signal)",
+      "en": "singlet"
+    },
+    {
+      "id": "VOCSPEC-106",
+      "type": "term",
+      "category": "SPEC",
+      "group": "NMR",
+      "de": "Dublett",
+      "en": "doublet"
+    },
+    {
+      "id": "VOCSPEC-107",
+      "type": "term",
+      "category": "SPEC",
+      "group": "NMR",
+      "de": "Triplett (Signal)",
+      "en": "triplet"
+    },
+    {
+      "id": "VOCSPEC-108",
+      "type": "term",
+      "category": "SPEC",
+      "group": "NMR",
+      "de": "Quartett",
+      "en": "quartet"
+    },
+    {
+      "id": "VOCSPEC-109",
+      "type": "term",
+      "category": "SPEC",
+      "group": "NMR",
+      "de": "Multiplett",
+      "en": "multiplet"
+    },
+    {
+      "id": "VOCSPEC-110",
+      "type": "term",
+      "category": "SPEC",
+      "group": "NMR",
+      "de": "n-plus-eins-Regel",
+      "en": "n-plus-one rule",
+      "alternatives": [
+        "n + 1 rule"
+      ],
+      "usage_note_de": "Einfache Aufspaltung erster Ordnung durch n äquivalente Spin-½-Kerne."
+    },
+    {
+      "id": "VOCSPEC-111",
+      "type": "term",
+      "category": "SPEC",
+      "group": "NMR",
+      "de": "Signalintegration",
+      "en": "signal integration",
+      "alternatives": [
+        "integration"
+      ]
+    },
+    {
+      "id": "VOCSPEC-112",
+      "type": "term",
+      "category": "SPEC",
+      "group": "NMR",
+      "de": "Fläche unter dem Signal",
+      "en": "area under the signal",
+      "alternatives": [
+        "peak area",
+        "area under the peak"
+      ]
+    },
+    {
+      "id": "VOCSPEC-113",
+      "type": "term",
+      "category": "SPEC",
+      "group": "NMR",
+      "de": "Spektrenzuordnung",
+      "en": "spectral assignment",
+      "alternatives": [
+        "signal assignment",
+        "peak assignment"
+      ]
     }
-  ]
+  ],
+  "vocab_groups": {
+    "SPEC": {
+      "BASICS": "Grundbegriffe & Spektren",
+      "UVVIS": "UV/Vis & Lambert-Beer",
+      "ROTIR": "Rotation, Schwingung & IR",
+      "PHOTO": "Lumineszenz & Photophysik",
+      "ATOM": "Termsymbole & Feinstruktur",
+      "NMR": "NMR"
+    }
+  }
 }

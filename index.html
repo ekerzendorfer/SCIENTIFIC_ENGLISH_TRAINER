@@ -16,6 +16,7 @@ header .wrap{padding:1.55rem 0 1.65rem}.brand{margin:0;color:#a9e6d5;font-size:.
 h1,h2,h3,p{margin:0 0 .65rem}h1{font-size:clamp(1.7rem,5.5vw,2.65rem);line-height:1.12;margin-top:.35rem}header p:last-child{margin:0;color:#dae9e5}h2{font-size:1.35rem}h3{font-size:1.08rem}
 main{padding:1.15rem 0 2rem}.panel{padding:clamp(1rem,4vw,1.6rem);background:var(--panel);border:1px solid var(--line);border-radius:1rem;margin-bottom:1rem;box-shadow:0 4px 14px #12272d09}
 .controls{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1.5fr) minmax(0,1fr);gap:.75rem;margin:.95rem 0}.controls label,.search-label{display:grid;gap:.25rem;font-size:.86rem;font-weight:700}.controls select,.search-label input{width:100%;font-weight:450}
+.vocab-controls{grid-template-columns:repeat(2,minmax(0,1fr));margin-top:0}
 .row{display:flex;gap:.55rem;align-items:center;flex-wrap:wrap}.row.spread{justify-content:space-between}.muted{color:var(--muted)}.small{font-size:.87rem}.stats{display:flex;flex-wrap:wrap;gap:.45rem 1rem;margin:.65rem 0}.chip{display:inline-block;border-radius:2rem;padding:.15rem .62rem;background:var(--soft);color:#00463d;font-size:.82rem;font-weight:700}
 .prompt{font-size:clamp(1.25rem,4.5vw,1.75rem);font-weight:700;line-height:1.4;overflow-wrap:anywhere;margin:.85rem 0}.answer{background:#eef6f2;border-left:4px solid #57a990;border-radius:.4rem .75rem .75rem .4rem;padding:.9rem 1rem;margin:1rem 0}.answer-text{font-size:1.16rem;font-weight:650}.answer p:last-child{margin-bottom:0}
 progress{width:100%;height:.52rem;display:block;margin:.75rem 0;accent-color:var(--accent)}.notice{background:#fff4df;color:#603b13;padding:.55rem .75rem;border-radius:.6rem}
@@ -27,9 +28,9 @@ footer{padding:.05rem .2rem;color:var(--muted);font-size:.82rem}.focus{scroll-ma
 </head>
 <body>
 <header><div class="wrap">
-  <p class="brand">Scientific English <span class="version">v0.1</span></p>
+  <p class="brand">Scientific English <span class="version">v0.2</span></p>
   <h1>Erklären. Auf Englisch.</h1>
-  <p>Kurze Sprechübungen für Physical Chemistry II.</p>
+  <p>Fachvokabeln und Sprechübungen für Physical Chemistry II.</p>
 </div></header>
 <main class="wrap">
 <p id="storage-message" class="notice small" role="status" hidden></p>
@@ -37,15 +38,23 @@ footer{padding:.05rem .2rem;color:var(--muted);font-size:.82rem}.focus{scroll-ma
 <div id="app" hidden>
 <section class="panel" id="setup" aria-labelledby="setup-title">
   <h2 id="setup-title" tabindex="-1">Deine Übungsrunde</h2>
-  <p class="muted">Sag die Antwort zuerst laut. Decke sie dann auf und bewerte, wie sicher du sie formulieren konntest.</p>
+  <p id="setup-hint" class="muted">Sag die Antwort zuerst laut. Decke sie dann auf und bewerte, wie sicher du sie formulieren konntest.</p>
   <div class="controls">
     <label>Thema<select id="category"><option value="">Alle Themen</option></select></label>
     <label>Modus<select id="mode">
       <option value="speak">Aktiv sprechen · DE → EN</option>
       <option value="recognise">Verstehen · EN → DE</option>
       <option value="scenario">Hörsaal-Rollenspiel</option>
+      <option value="vocab">Vokabeltrainer</option>
     </select></label>
     <label>Rundengröße<select id="limit"><option value="5">5 Karten</option><option value="10">10 Karten</option></select></label>
+  </div>
+  <div class="controls vocab-controls" id="vocab-controls" hidden>
+    <label>Richtung<select id="direction">
+      <option value="de-en">Deutsch → Englisch</option>
+      <option value="en-de">Englisch → Deutsch</option>
+    </select></label>
+    <label id="group-control">Teilgebiet<select id="vocab-group"><option value="">Alle Teilgebiete</option></select></label>
   </div>
   <div class="stats muted small" id="stats" aria-live="polite"></div>
   <div class="row">
@@ -72,7 +81,7 @@ footer{padding:.05rem .2rem;color:var(--muted);font-size:.82rem}.focus{scroll-ma
     <button type="button" id="hear-answer" hidden>Englisch anhören</button>
   </div>
   <div id="ratings" hidden>
-    <p class="small muted">Bewerte deine eigene Formulierung. Sinngemäß richtige Varianten zählen.</p>
+    <p class="small muted" id="rating-hint">Bewerte deine eigene Formulierung. Sinngemäß richtige Varianten zählen.</p>
     <div class="row score-row">
       <button type="button" data-rating="again">Nicht gewusst</button>
       <button type="button" data-rating="hard">Unsicher</button>
@@ -90,14 +99,14 @@ footer{padding:.05rem .2rem;color:var(--muted);font-size:.82rem}.focus{scroll-ma
 </section>
 
 <details class="panel" id="glossary"><summary>Glossar nachschlagen</summary>
-  <p class="small muted">Suche nach einer deutschen oder englischen Wendung. Ohne Suchbegriff siehst du die Karten zum ausgewählten Thema.</p>
+  <p class="small muted">Suche nach einem deutschen oder englischen Begriff oder Satz. Der Themenfilter bleibt aktiv.</p>
   <label class="search-label">Suchbegriff<input id="search" type="search" placeholder="z. B. momentum oder Wellenfunktion"></label>
   <p id="search-count" class="small muted" role="status"></p>
   <ul class="result-list" id="results"></ul>
 </details>
 
 <details class="panel" id="backup"><summary>Lernstand sichern oder übertragen</summary>
-  <p class="small muted">Der Lernstand bleibt in diesem Browser. Zum Wechsel auf ein anderes Gerät exportierst du ihn hier und importierst die Datei dort. Pro Karte und Modus bleibt der jeweils neuere Stand erhalten.</p>
+  <p class="small muted">Der Lernstand bleibt in diesem Browser. Zum Wechsel auf ein anderes Gerät exportierst du ihn hier und importierst die Datei dort. Pro Karte und Übungsrichtung bleibt der jeweils neuere Stand erhalten.</p>
   <div class="row"><button type="button" id="export">JSON exportieren</button>
     <button type="button" id="import">JSON importieren</button>
     <input id="file" type="file" accept=".json,application/json" hidden>
@@ -111,7 +120,10 @@ footer{padding:.05rem .2rem;color:var(--muted);font-size:.82rem}.focus{scroll-ma
 <script>
 'use strict';
 const $=id=>document.getElementById(id);
-const modes=['speak','recognise','scenario'];
+const phraseModes=['speak','recognise','scenario'];
+const termModes=['vocab-de-en','vocab-en-de'];
+const isVocab=mode=>termModes.includes(mode);
+const fromEnglish=mode=>mode==='recognise'||mode==='vocab-en-de';
 const key='scientific-english-trainer:progress:v1';
 const intervals=[3,7,14,30];
 const day=86400000;
@@ -129,8 +141,9 @@ function validateDeck(data){
   const ids=new Set();
   if(data?.schema_version!==1 || !data.categories || !Array.isArray(data.entries) || !data.entries.length) throw Error('Unbekanntes Glossarformat.');
   for(const c of data.entries){
-    if(typeof c.id!=='string' || !/^[A-Z]+-\d+$/.test(c.id) || ids.has(c.id) || !Object.hasOwn(data.categories,c.category) || c.type!=='phrase' || typeof c.de!=='string' || !c.de.trim() || typeof c.en!=='string' || !c.en.trim() ||
+    if(typeof c.id!=='string' || !/^[A-Z]+-\d+$/.test(c.id) || ids.has(c.id) || !Object.hasOwn(data.categories,c.category) || !['phrase','term'].includes(c.type) || typeof c.de!=='string' || !c.de.trim() || typeof c.en!=='string' || !c.en.trim() ||
       (c.alternatives && (!Array.isArray(c.alternatives)||c.alternatives.some(a=>typeof a!=='string'||!a.trim()))) ||
+      (c.type==='term' && (c.scenario_de||c.scenario_answer_en||!Object.hasOwn(data.vocab_groups?.[c.category]??{},c.group))) ||
       Boolean(c.scenario_de)!==Boolean(c.scenario_answer_en)) throw Error('Ungültige Karte im Glossar.');
     ids.add(c.id);
   }
@@ -138,7 +151,7 @@ function validateDeck(data){
 }
 function validateBackup(saved){
   if(saved?.format!=='scientific-english-trainer' || saved.version!==1 || !saved.records || typeof saved.records!=='object' || Array.isArray(saved.records)) throw Error('Das ist keine passende Lernstanddatei.');
-  const known=new Set(deck.entries.flatMap(c=>modes.filter(m=>m!=='scenario'||c.scenario_de).map(m=>stamp(c,m))));
+  const known=new Set(deck.entries.flatMap(c=>(c.type==='term'?termModes:phraseModes.filter(m=>m!=='scenario'||c.scenario_de)).map(m=>stamp(c,m))));
   const validated={};
   for(const [k,v] of Object.entries(saved.records)){
     if(!known.has(k))continue;
@@ -148,12 +161,42 @@ function validateBackup(saved){
   }
   return validated;
 }
-function selection(){return {category:$('category').value,mode:$('mode').value,limit:Number($('limit').value)}}
-function pool(cfg){return deck.entries.filter(c=>(!cfg.category||c.category===cfg.category)&&(cfg.mode!=='scenario'||c.scenario_de))}
+function selection(){
+  const vocab=$('mode').value==='vocab';
+  return {category:$('category').value,mode:vocab?'vocab-'+$('direction').value:$('mode').value,
+    limit:Number($('limit').value),group:vocab?$('vocab-group').value:''};
+}
+function pool(cfg){
+  return deck.entries.filter(c=>(!cfg.category||c.category===cfg.category) &&
+    (isVocab(cfg.mode)
+      ? c.type==='term' && (!cfg.group||cfg.group===c.category+'/'+c.group)
+      : c.type==='phrase' && (cfg.mode!=='scenario'||c.scenario_de)));
+}
+function refreshGroups(){
+  const select=$('vocab-group'), previous=select.value, category=$('category').value;
+  const groups=Object.entries(deck.vocab_groups??{}).filter(([id])=>!category||category===id);
+  const options=groups.flatMap(([id,labels])=>Object.entries(labels).map(([group,label])=>
+    new Option(groups.length>1?deck.categories[id]+' · '+label:label,id+'/'+group)));
+  select.replaceChildren(new Option('Alle Teilgebiete',''),...options);
+  select.value=options.some(option=>option.value===previous)?previous:'';
+  $('group-control').hidden=options.length===0;
+}
+function changeMode(){
+  const vocab=$('mode').value==='vocab';
+  const limit=$('limit'), previous=limit.value, sizes=vocab?[10,20,30,50]:[5,10];
+  limit.replaceChildren(...sizes.map(n=>new Option(n+' Karten',String(n))));
+  limit.value=sizes.includes(Number(previous))?previous:String(sizes[0]);
+  $('vocab-controls').hidden=!vocab;
+  $('setup-hint').textContent=vocab?'Übe einzelne Fachbegriffe. Übersetzung aufdecken, dann selbst bewerten.':
+    'Sag die Antwort zuerst laut. Decke sie dann auf und bewerte, wie sicher du sie formulieren konntest.';
+  if(vocab)refreshGroups();
+  updateStats();
+}
 function updateStats(){
   const cfg=selection(), cards=pool(cfg), fresh=cards.filter(c=>!record(c,cfg.mode)).length;
   const review=cards.filter(c=>record(c,cfg.mode)&&due(c,cfg.mode)).length;
-  $('stats').textContent=cards.length ? fresh+' neu · '+review+' fällig · '+cards.length+' im Filter' : 'Für dieses Thema gibt es in diesem Modus noch keine Karten.';
+  $('stats').textContent=cards.length ? fresh+' neu · '+review+' fällig · '+cards.length+' im Filter' :
+    isVocab(cfg.mode)?'Hier gibt es noch keine Fachvokabeln. Der erste Wortschatz steht unter Spektroskopie.':'Für dieses Thema gibt es in diesem Modus noch keine Karten.';
   $('start').disabled=fresh+review===0;
   $('free').disabled=cards.length===0;
 }
@@ -189,13 +232,14 @@ function next(){
   }
   revealed=false;
   const {card,retry}=active;
-  $('topic').textContent=deck.categories[card.category];
+  $('topic').textContent=isVocab(config.mode)?deck.vocab_groups[card.category][card.group]:deck.categories[card.category];
   $('position').textContent=retry ? 'Wiederholung · '+finished.size+' von '+total+' bearbeitet' : 'Karte '+(finished.size+1)+' von '+total;
   $('progress').max=total;$('progress').value=finished.size;
   const mode=config.mode;
-  $('instruction').textContent=mode==='scenario'?'Antworte auf Englisch wie im Hörsaal. Zwei bis drei Sätze reichen.':mode==='speak'?'Formuliere laut auf Englisch.':'Erkläre die Bedeutung auf Deutsch.';
-  $('prompt').textContent=mode==='scenario'?card.scenario_de:mode==='speak'?card.de:card.en;
-  $('prompt').lang=mode==='recognise'?'en':'de';
+  $('instruction').textContent=isVocab(mode)?(fromEnglish(mode)?'Wie heißt der Fachbegriff auf Deutsch?':'Wie heißt der Fachbegriff auf Englisch?'):
+    mode==='scenario'?'Antworte auf Englisch wie im Hörsaal. Zwei bis drei Sätze reichen.':mode==='speak'?'Formuliere laut auf Englisch.':'Erkläre die Bedeutung auf Deutsch.';
+  $('prompt').textContent=mode==='scenario'?card.scenario_de:fromEnglish(mode)?card.en:card.de;
+  $('prompt').lang=fromEnglish(mode)?'en':'de';
   $('reveal').hidden=false;$('answer').hidden=true;$('ratings').hidden=true;
   $('hear-prompt').hidden=!canSpeak||mode!=='recognise';$('hear-answer').hidden=true;
   setText('audio-message','');
@@ -205,13 +249,15 @@ function reveal(){
   if(!active||revealed)return;
   revealed=true;
   const {card}=active, mode=config.mode;
-  $('answer-title').textContent=mode==='recognise'?'Bedeutung':'Musterantwort';
-  $('answer-text').textContent=mode==='scenario'?card.scenario_answer_en:mode==='speak'?card.en:card.de;
-  $('answer-text').lang=mode==='recognise'?'de':'en';
-  setText('alternatives',mode==='speak'&&card.alternatives?.length?'↳ '+card.alternatives.join(' / '):'');
+  $('answer-title').textContent=isVocab(mode)?'Übersetzung':mode==='recognise'?'Bedeutung':'Musterantwort';
+  $('answer-text').textContent=mode==='scenario'?card.scenario_answer_en:fromEnglish(mode)?card.de:card.en;
+  $('answer-text').lang=fromEnglish(mode)?'de':'en';
+  setText('alternatives',(mode==='speak'||mode==='vocab-de-en')&&card.alternatives?.length?'↳ '+card.alternatives.join(' / '):'');
   setText('example',mode!=='scenario'&&card.example_en?'“'+card.example_en+'”':'');
   setText('note',card.usage_note_de||'');
-  $('hear-answer').hidden=!canSpeak||mode==='recognise';
+  $('hear-answer').hidden=!canSpeak||mode==='recognise'||isVocab(mode);
+  $('rating-hint').textContent=isVocab(mode)?'Richtige Fachsynonyme zählen. Unsichere und nicht gewusste Vokabeln kommen am Rundenende erneut.':
+    'Bewerte deine eigene Formulierung. Sinngemäß richtige Varianten zählen.';
   $('answer').hidden=false;$('ratings').hidden=false;$('reveal').hidden=true;
   $('answer-title').focus();
 }
@@ -221,11 +267,11 @@ function rate(rating){
   const old=record(card,mode);
   const streak=rating==='good'?Math.min((old?.streak??0)+1,4):0;
   const now=Date.now();
-  // A first miss schedules tomorrow and one immediate retry. A successful
-  // same-round retry still leaves the card due tomorrow.
-  const days=retry||rating==='again'?1:rating==='hard'?2:intervals[streak-1];
+  // Difficult vocabulary returns once in this round and is due again tomorrow.
+  const needsRetry=rating==='again'||(isVocab(mode)&&rating==='hard');
+  const days=retry||needsRetry?1:rating==='hard'?2:intervals[streak-1];
   marks[stamp(card,mode)]={streak:retry?0:streak,rating,due:now+days*day,updated:now};
-  if(rating==='again'&&!retried.has(card.id)){
+  if(needsRetry&&!retried.has(card.id)){
     retried.add(card.id);pending.push({card,retry:true});
   }
   finished.set(card.id,rating);
@@ -302,16 +348,23 @@ async function init(){
     if(raw)marks=validateBackup({format:'scientific-english-trainer',version:1,records:JSON.parse(raw)});
   }catch{setText('storage-message','Der gespeicherte Lernstand war nicht lesbar. Du kannst eine Sicherungsdatei importieren.')}
   for(const [id,label] of Object.entries(deck.categories))$('category').add(new Option(label,id));
-  $('category').addEventListener('change',()=>{updateStats();search()});
-  $('mode').addEventListener('change',updateStats);
+  $('category').addEventListener('change',()=>{if($('mode').value==='vocab')refreshGroups();updateStats();search()});
+  $('mode').addEventListener('change',changeMode);
+  $('direction').addEventListener('change',updateStats);
+  $('vocab-group').addEventListener('change',updateStats);
   $('search').addEventListener('input',search);
   $('start').onclick=()=>startRound(false);$('free').onclick=()=>startRound(true);
   $('reveal').onclick=reveal;$('stop').onclick=showSetup;$('back').onclick=showSetup;
   for(const b of document.querySelectorAll('[data-rating]'))b.onclick=()=>rate(b.dataset.rating);
   $('hear-prompt').onclick=()=>speak(active.card.en);
-  $('hear-answer').onclick=()=>speak(config.mode==='scenario'?active.card.scenario_answer_en:active.card.en);
+  $('hear-answer').onclick=()=>{if(active&&!isVocab(config.mode))speak(config.mode==='scenario'?active.card.scenario_answer_en:active.card.en)};
   $('export').onclick=exportMarks;$('import').onclick=()=>$('file').click();$('file').onchange=importMarks;
-  updateStats();search();$('app').hidden=false;
+  if(new URLSearchParams(window.location?.search??'').get('modus')==='vokabeln'){
+    $('mode').value='vocab';
+    if(Object.hasOwn(deck.vocab_groups??{},'SPEC'))$('category').value='SPEC';
+  }
+  changeMode();
+  search();$('app').hidden=false;
 }
 init();
 </script>
