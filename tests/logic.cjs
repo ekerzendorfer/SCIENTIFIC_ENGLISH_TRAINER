@@ -22,13 +22,16 @@ const document={
   querySelectorAll(){return []},
   createElement:element,
 };
-const box=vm.createContext({document,window:{location:{search:''},speechSynthesis:{cancel(){}}},SpeechSynthesisUtterance:function(){},
+const box=vm.createContext({document,window:{location:{search:''},speechSynthesis:{cancel(){}},SpeechSynthesisUtterance:function(){}},
   URLSearchParams,Option:function(label,value){Object.assign(this,{label,value})},fetch:async()=>({ok:true,json:async()=>glossary}),
   localStorage:{getItem:k=>saved.get(k),setItem:(k,v)=>saved.set(k,v)}});
 (async()=>{
   await vm.runInContext(src,box);
   const run=code=>vm.runInContext(code,box);
-  assert.equal(glossary.entries.filter(c=>c.type==='phrase').length,53);
+  assert.equal(glossary.entries.filter(c=>c.type==='phrase'&&c.category!=='DAILY').length,53);
+  const everyday=glossary.entries.filter(c=>c.type==='phrase'&&c.category==='DAILY');
+  assert.equal(everyday.length,60);
+  assert.deepEqual(Object.keys(glossary.phrase_groups.DAILY).map(group=>everyday.filter(c=>c.group===group).length),[10,10,10,10,10,10]);
   assert.equal(glossary.entries.filter(c=>c.type==='term'&&c.category==='SPEC').length,113);
   const classroom=glossary.entries.filter(c=>c.type==='term'&&c.category==='CLASS');
   assert.equal(classroom.length,60);
@@ -110,6 +113,28 @@ const box=vm.createContext({document,window:{location:{search:''},speechSynthesi
   run("rate('good'); showSetup(); window.location.search='?modus=vokabeln'");
   await run('init()');
   assert.equal(run("$('category').value"),'SPEC');
+  run("window.location.search='?thema=daily'");
+  await run('init()');
+  assert.equal(run("$('category').value"),'DAILY');
+  assert.equal(run("$('mode').value"),'speak');
+  assert.match(run("$('stats').textContent"),/60 neu/);
+  assert.equal(run("$('group-control').hidden"),false);
+  assert.equal(run("$('direction-control').hidden"),true);
+  run("$('vocab-group').value='DAILY/BUYTIME'; $('limit').value='10'; startRound(false); reveal()");
+  assert.equal(run('total'),10);
+  assert.equal(run('active.card.group'),'BUYTIME');
+  assert.equal(run("$('prompt').lang"),'de');
+  assert.equal(run("$('answer-text').lang"),'en');
+  assert.equal(run("$('hear-answer').hidden"),false);
+  run("rate('again')");
+  assert.equal(run("pending.filter(c=>c.retry).length"),1);
+  run("showSetup(); $('mode').value='recognise'; changeMode(); startRound(false); reveal()");
+  assert.equal(run('active.card.group'),'BUYTIME');
+  assert.equal(run("$('prompt').lang"),'en');
+  assert.equal(run("$('answer-text').lang"),'de');
+  run("showSetup(); $('mode').value='vocab'; changeMode()");
+  assert.equal(run("$('start').disabled"),true);
+  assert.equal(run("$('vocab-group').value"),'');
   const payload=JSON.stringify({format:'scientific-english-trainer',version:1,records:JSON.parse([...saved.values()][0])});
   const count=Object.keys(JSON.parse(payload).records).length;
   assert.equal(run("Object.keys(validateBackup("+payload+")).length"),count);
@@ -121,5 +146,5 @@ const box=vm.createContext({document,window:{location:{search:''},speechSynthesi
   await run('importMarks()');
   assert.match(run("$('backup-message').textContent"),/kein gültiges JSON/);
   assert.equal(run('Object.keys(marks).length'),count);
-  console.log('173 vocabulary cards, phrase modes, topic links, both directions, 50-card rounds, subgroups, retries, no audio, and backups verified.');
+  console.log('173 term cards and 113 phrase cards verified, including everyday phrase groups, both directions, topic links, retries, audio visibility and backups.');
 })().catch(e=>{console.error(e);process.exitCode=1});

@@ -1,10 +1,12 @@
 # Scientific English Trainer
 
-Ein kleiner Sprachtrainer für englischsprachige Erklärungen in Physical Chemistry II. Version 0.3 enthält 60 Vokabelkarten zu Classroom English, 113 Spektroskopie-Fachvokabeln, 53 Satzkarten und zehn kurze Hörsaal-Rollenspiele. Die Sammlung enthält eigens formulierte Beispiele, keine offiziellen Lehrunterlagen.
+Ein kleiner Sprachtrainer für den Hörsaal und fürs tägliche Gespräch. Version 0.4 ergänzt 60 Satzkarten zu Alltagsenglisch. Die 60 Vokabelkarten zu Classroom English, 113 Spektroskopie-Fachvokabeln, 53 bisherigen Satzkarten und zehn Hörsaal-Rollenspiele bleiben erhalten. Die Sammlung enthält eigens formulierte Beispiele, keine offiziellen Lehrunterlagen.
 
 ## Üben
 
 [Classroom-English-Vokabeltrainer starten](https://ekerzendorfer.github.io/SCIENTIFIC_ENGLISH_TRAINER/?modus=vokabeln&thema=class) · [Spektroskopie-Vokabeltrainer starten](https://ekerzendorfer.github.io/SCIENTIFIC_ENGLISH_TRAINER/?modus=vokabeln)
+
+[Alltagsenglisch starten](https://ekerzendorfer.github.io/SCIENTIFIC_ENGLISH_TRAINER/?thema=daily) – 5 oder 10 Phrasen pro Runde, in beiden Richtungen. Teilgebiete: Small Talk, Nachfragen, Zeit gewinnen, Meinungen, Bitten und Absprachen. Im Modus „Aktiv sprechen“ zuerst die eigene Version laut sagen, dann Muster und Varianten vergleichen.
 
 - **Aktiv sprechen (DE → EN):** Erst laut formulieren, dann die Musterantwort und mögliche Varianten vergleichen.
 - **Verstehen (EN → DE):** Die Bedeutung erklären. Eine englische Vorlesestimme kann je nach Gerät verfügbar sein.
@@ -26,4 +28,4 @@ Der Lernstand liegt im jeweiligen Browser. Export und Import übertragen ihn als
 
 Alle Karten stehen in [data/glossary.json](data/glossary.json). Bestehende IDs nicht ändern, weil der Lernstand auf sie verweist. Pflichtfelder sind `id`, `type`, `category`, `de` und `en`. Optionen sind `alternatives`, `example_en`, `usage_note_de` und das Feldpaar `scenario_de` / `scenario_answer_en`. Vokabelkarten haben `type: "term"` und ein `group`, dessen Bezeichnung in `vocab_groups[category]` steht. Die Satzkarten haben weiterhin `type: "phrase"`. Die Sprechbeispiele sind eigene Formulierungen. Aus Sprechübungen übernommene Wendungen werden ohne Transkripte oder persönliche Angaben eingepflegt.
 
-Der Schwerpunkt liegt auf Sprache für den Hörsaal. Die inhaltliche Zuordnung zu konkreten IMC-Übungseinheiten bleibt offen.
+Für Satzkarten mit Teilgebieten wird die Bezeichnung unter `phrase_groups[category]` erfasst. Die inhaltliche Zuordnung zu konkreten IMC-Übungseinheiten bleibt offen.

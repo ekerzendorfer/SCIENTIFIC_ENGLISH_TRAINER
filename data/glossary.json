@@ -7,7 +7,8 @@
     "BOND": "Bindung, MO-Theorie & Symmetrie",
     "SPEC": "Spektroskopie",
     "SOLID": "Festkörper & Oberflächen",
-    "MATH": "Mathematik, Einheiten & Diagramme"
+    "MATH": "Mathematik, Einheiten & Diagramme",
+    "DAILY": "Alltagsenglisch (Everyday English)"
   },
   "entries": [
     {
@@ -2225,6 +2226,654 @@
       "alternatives": [
         "give someone a moment to think"
       ]
+    },
+    {
+      "id": "DAILY-001",
+      "type": "phrase",
+      "category": "DAILY",
+      "group": "SMALLTALK",
+      "de": "Schön, dich endlich persönlich kennenzulernen.",
+      "en": "It's good to finally meet you in person.",
+      "alternatives": [
+        "It's lovely to finally meet you in person."
+      ]
+    },
+    {
+      "id": "DAILY-002",
+      "type": "phrase",
+      "category": "DAILY",
+      "group": "SMALLTALK",
+      "de": "Wie läuft deine Woche bisher?",
+      "en": "How's your week going so far?",
+      "usage_note_de": "Für „Wie läuft …?“ passt hier How’s … going?, nicht How is … running?"
+    },
+    {
+      "id": "DAILY-003",
+      "type": "phrase",
+      "category": "DAILY",
+      "group": "SMALLTALK",
+      "de": "Was hast du in letzter Zeit so gemacht?",
+      "en": "What have you been up to lately?",
+      "alternatives": [
+        "What have you been doing lately?"
+      ],
+      "usage_note_de": "Locker und gesprächsnah."
+    },
+    {
+      "id": "DAILY-004",
+      "type": "phrase",
+      "category": "DAILY",
+      "group": "SMALLTALK",
+      "de": "Bei mir war in letzter Zeit einiges los.",
+      "en": "I've had a lot going on lately.",
+      "alternatives": [
+        "It's been a busy time for me lately."
+      ]
+    },
+    {
+      "id": "DAILY-005",
+      "type": "phrase",
+      "category": "DAILY",
+      "group": "SMALLTALK",
+      "de": "Ich habe schon einiges von dir gehört.",
+      "en": "I've heard a lot about you."
+    },
+    {
+      "id": "DAILY-006",
+      "type": "phrase",
+      "category": "DAILY",
+      "group": "SMALLTALK",
+      "de": "Wie bist du dazu gekommen?",
+      "en": "How did you get into that?",
+      "usage_note_de": "Zum Beispiel, wenn jemand von einem Beruf oder Hobby erzählt."
+    },
+    {
+      "id": "DAILY-007",
+      "type": "phrase",
+      "category": "DAILY",
+      "group": "SMALLTALK",
+      "de": "Ich bin noch nicht dazu gekommen.",
+      "en": "I haven't got round to it yet.",
+      "alternatives": [
+        "I haven't gotten around to it yet."
+      ],
+      "usage_note_de": "Get round to ist britisch, get around to ist auch im US-Englisch geläufig."
+    },
+    {
+      "id": "DAILY-008",
+      "type": "phrase",
+      "category": "DAILY",
+      "group": "SMALLTALK",
+      "de": "Das ist schon eine Weile her.",
+      "en": "That was a while ago."
+    },
+    {
+      "id": "DAILY-009",
+      "type": "phrase",
+      "category": "DAILY",
+      "group": "SMALLTALK",
+      "de": "Das klingt ganz nach dir.",
+      "en": "That sounds like you.",
+      "usage_note_de": "Bezogen auf etwas Typisches für die Person, je nach Ton freundlich oder neckend."
+    },
+    {
+      "id": "DAILY-010",
+      "type": "phrase",
+      "category": "DAILY",
+      "group": "SMALLTALK",
+      "de": "War nett, mit dir zu plaudern.",
+      "en": "It was nice chatting with you.",
+      "alternatives": [
+        "It was good talking to you."
+      ]
+    },
+    {
+      "id": "DAILY-011",
+      "type": "phrase",
+      "category": "DAILY",
+      "group": "CLARIFY",
+      "de": "Das letzte Stück habe ich nicht verstanden.",
+      "en": "I didn't catch that last bit.",
+      "alternatives": [
+        "I didn't quite catch the last part."
+      ],
+      "usage_note_de": "Catch passt, wenn man etwas akustisch nicht mitbekommen hat."
+    },
+    {
+      "id": "DAILY-012",
+      "type": "phrase",
+      "category": "DAILY",
+      "group": "CLARIFY",
+      "de": "Kannst du das noch einmal ein bisschen langsamer sagen?",
+      "en": "Could you say that again a little more slowly?",
+      "alternatives": [
+        "Could you repeat that a bit more slowly?"
+      ]
+    },
+    {
+      "id": "DAILY-013",
+      "type": "phrase",
+      "category": "DAILY",
+      "group": "CLARIFY",
+      "de": "Was genau meinst du damit?",
+      "en": "What exactly do you mean by that?",
+      "alternatives": [
+        "What do you mean by that, exactly?"
+      ]
+    },
+    {
+      "id": "DAILY-014",
+      "type": "phrase",
+      "category": "DAILY",
+      "group": "CLARIFY",
+      "de": "Habe ich das richtig verstanden?",
+      "en": "Have I got that right?",
+      "alternatives": [
+        "Did I get that right?"
+      ]
+    },
+    {
+      "id": "DAILY-015",
+      "type": "phrase",
+      "category": "DAILY",
+      "group": "CLARIFY",
+      "de": "Meinst du damit, dass …?",
+      "en": "Do you mean that …?",
+      "alternatives": [
+        "Are you saying that …?"
+      ],
+      "usage_note_de": "Do you mean that …? klingt als neutrale Rückfrage meist weicher."
+    },
+    {
+      "id": "DAILY-016",
+      "type": "phrase",
+      "category": "DAILY",
+      "group": "CLARIFY",
+      "de": "Kannst du mir die einzelnen Schritte erklären?",
+      "en": "Could you walk me through it?",
+      "alternatives": [
+        "Could you take me through it step by step?"
+      ]
+    },
+    {
+      "id": "DAILY-017",
+      "type": "phrase",
+      "category": "DAILY",
+      "group": "CLARIFY",
+      "de": "Kannst du mir ein konkretes Beispiel dafür geben?",
+      "en": "Could you give me a specific example?",
+      "alternatives": [
+        "Could you give me an example of what you mean?"
+      ]
+    },
+    {
+      "id": "DAILY-018",
+      "type": "phrase",
+      "category": "DAILY",
+      "group": "CLARIFY",
+      "de": "Darauf wollte ich nicht hinaus.",
+      "en": "That's not quite what I meant.",
+      "alternatives": [
+        "That wasn't really my point."
+      ]
+    },
+    {
+      "id": "DAILY-019",
+      "type": "phrase",
+      "category": "DAILY",
+      "group": "CLARIFY",
+      "de": "Das habe ich wohl falsch aufgefasst.",
+      "en": "I think I took that the wrong way.",
+      "alternatives": [
+        "I may have misunderstood that."
+      ],
+      "usage_note_de": "Take something the wrong way kann auch heißen, eine Bemerkung persönlicher aufzufassen als beabsichtigt."
+    },
+    {
+      "id": "DAILY-020",
+      "type": "phrase",
+      "category": "DAILY",
+      "group": "CLARIFY",
+      "de": "Jetzt verstehe ich, worauf du hinauswillst.",
+      "en": "Now I see what you're getting at.",
+      "alternatives": [
+        "Now I see what you mean."
+      ]
+    },
+    {
+      "id": "DAILY-021",
+      "type": "phrase",
+      "category": "DAILY",
+      "group": "BUYTIME",
+      "de": "Lass mich kurz nachdenken.",
+      "en": "Let me think for a moment.",
+      "alternatives": [
+        "Give me a second to think."
+      ]
+    },
+    {
+      "id": "DAILY-022",
+      "type": "phrase",
+      "category": "DAILY",
+      "group": "BUYTIME",
+      "de": "Wie soll ich das am besten ausdrücken?",
+      "en": "How can I put this?",
+      "alternatives": [
+        "What's the best way to put it?"
+      ]
+    },
+    {
+      "id": "DAILY-023",
+      "type": "phrase",
+      "category": "DAILY",
+      "group": "BUYTIME",
+      "de": "Mir fällt das Wort gerade nicht ein.",
+      "en": "I can't think of the word right now.",
+      "alternatives": [
+        "The word escapes me at the moment."
+      ]
+    },
+    {
+      "id": "DAILY-024",
+      "type": "phrase",
+      "category": "DAILY",
+      "group": "BUYTIME",
+      "de": "Es liegt mir auf der Zunge.",
+      "en": "It's on the tip of my tongue."
+    },
+    {
+      "id": "DAILY-025",
+      "type": "phrase",
+      "category": "DAILY",
+      "group": "BUYTIME",
+      "de": "Ich weiß nicht, wie das auf Englisch heißt.",
+      "en": "I'm not sure what it's called in English.",
+      "alternatives": [
+        "I don't know the English word for it."
+      ]
+    },
+    {
+      "id": "DAILY-026",
+      "type": "phrase",
+      "category": "DAILY",
+      "group": "BUYTIME",
+      "de": "Es ist so eine Art …",
+      "en": "It's a kind of …",
+      "alternatives": [
+        "It's a sort of …"
+      ],
+      "usage_note_de": "Nützlich, um ein fehlendes Wort zu umschreiben und weiterzusprechen."
+    },
+    {
+      "id": "DAILY-027",
+      "type": "phrase",
+      "category": "DAILY",
+      "group": "BUYTIME",
+      "de": "Ich würde es so beschreiben …",
+      "en": "I'd describe it like this …",
+      "alternatives": [
+        "The way I'd describe it is …"
+      ]
+    },
+    {
+      "id": "DAILY-028",
+      "type": "phrase",
+      "category": "DAILY",
+      "group": "BUYTIME",
+      "de": "Ich versuche es noch einmal.",
+      "en": "Let me try that again.",
+      "alternatives": [
+        "I'll have another go."
+      ]
+    },
+    {
+      "id": "DAILY-029",
+      "type": "phrase",
+      "category": "DAILY",
+      "group": "BUYTIME",
+      "de": "Mir ist gerade der Faden gerissen.",
+      "en": "I've lost my train of thought.",
+      "alternatives": [
+        "I've lost my thread."
+      ]
+    },
+    {
+      "id": "DAILY-030",
+      "type": "phrase",
+      "category": "DAILY",
+      "group": "BUYTIME",
+      "de": "Wo war ich gerade?",
+      "en": "Where was I?",
+      "alternatives": [
+        "Now, where was I?"
+      ]
+    },
+    {
+      "id": "DAILY-031",
+      "type": "phrase",
+      "category": "DAILY",
+      "group": "OPINION",
+      "de": "Ich verstehe deinen Standpunkt.",
+      "en": "I see your point.",
+      "alternatives": [
+        "I see where you're coming from."
+      ],
+      "usage_note_de": "Du erkennst die Sichtweise an, ohne ihr schon zustimmen zu müssen."
+    },
+    {
+      "id": "DAILY-032",
+      "type": "phrase",
+      "category": "DAILY",
+      "group": "OPINION",
+      "de": "Da hast du nicht unrecht.",
+      "en": "You've got a point.",
+      "alternatives": [
+        "That's a fair point."
+      ]
+    },
+    {
+      "id": "DAILY-033",
+      "type": "phrase",
+      "category": "DAILY",
+      "group": "OPINION",
+      "de": "Ganz überzeugt bin ich noch nicht.",
+      "en": "I'm not quite convinced yet.",
+      "alternatives": [
+        "I'm not entirely convinced."
+      ]
+    },
+    {
+      "id": "DAILY-034",
+      "type": "phrase",
+      "category": "DAILY",
+      "group": "OPINION",
+      "de": "Ich sehe das ein bisschen anders.",
+      "en": "I see it a little differently."
+    },
+    {
+      "id": "DAILY-035",
+      "type": "phrase",
+      "category": "DAILY",
+      "group": "OPINION",
+      "de": "Ich neige eher dazu, …",
+      "en": "I'm leaning towards …",
+      "alternatives": [
+        "I'm more inclined to …"
+      ],
+      "usage_note_de": "Nach towards folgt ein Nomen oder die -ing-Form, nach inclined to der Infinitiv."
+    },
+    {
+      "id": "DAILY-036",
+      "type": "phrase",
+      "category": "DAILY",
+      "group": "OPINION",
+      "de": "Soweit ich das beurteilen kann, …",
+      "en": "As far as I can tell, …",
+      "alternatives": [
+        "From what I can tell, …"
+      ]
+    },
+    {
+      "id": "DAILY-037",
+      "type": "phrase",
+      "category": "DAILY",
+      "group": "OPINION",
+      "de": "Das kommt darauf an.",
+      "en": "It depends.",
+      "alternatives": [
+        "That depends."
+      ],
+      "usage_note_de": "It depends on …, nicht it depends of …."
+    },
+    {
+      "id": "DAILY-038",
+      "type": "phrase",
+      "category": "DAILY",
+      "group": "OPINION",
+      "de": "Mich hat vor allem überrascht, dass …",
+      "en": "What surprised me most was that …",
+      "alternatives": [
+        "I was particularly surprised that …"
+      ]
+    },
+    {
+      "id": "DAILY-039",
+      "type": "phrase",
+      "category": "DAILY",
+      "group": "OPINION",
+      "de": "So habe ich das noch nie gesehen.",
+      "en": "I'd never looked at it that way before.",
+      "alternatives": [
+        "I'd never thought of it like that before."
+      ]
+    },
+    {
+      "id": "DAILY-040",
+      "type": "phrase",
+      "category": "DAILY",
+      "group": "OPINION",
+      "de": "Das klingt gut, aber ich sehe da einen Haken.",
+      "en": "That sounds good, but there's a catch.",
+      "alternatives": [
+        "That sounds good, but I can see one problem with it."
+      ]
+    },
+    {
+      "id": "DAILY-041",
+      "type": "phrase",
+      "category": "DAILY",
+      "group": "REQUEST",
+      "de": "Würdest du mir kurz helfen?",
+      "en": "Could you give me a hand?",
+      "alternatives": [
+        "Could you help me for a moment?"
+      ]
+    },
+    {
+      "id": "DAILY-042",
+      "type": "phrase",
+      "category": "DAILY",
+      "group": "REQUEST",
+      "de": "Würde es dir etwas ausmachen, wenn ich …?",
+      "en": "Would you mind if I …?",
+      "usage_note_de": "Typisch mit Vergangenheitsform, etwa Would you mind if I opened the window?"
+    },
+    {
+      "id": "DAILY-043",
+      "type": "phrase",
+      "category": "DAILY",
+      "group": "REQUEST",
+      "de": "Kann ich dich kurz etwas fragen?",
+      "en": "Can I ask you a quick question?",
+      "alternatives": [
+        "Could I ask you a quick question?"
+      ]
+    },
+    {
+      "id": "DAILY-044",
+      "type": "phrase",
+      "category": "DAILY",
+      "group": "REQUEST",
+      "de": "Ich hätte gern …",
+      "en": "I'd like …",
+      "alternatives": [
+        "Could I have …?"
+      ]
+    },
+    {
+      "id": "DAILY-045",
+      "type": "phrase",
+      "category": "DAILY",
+      "group": "REQUEST",
+      "de": "Kann ich mir das kurz ausborgen?",
+      "en": "Could I borrow that for a moment?",
+      "alternatives": [
+        "Could I borrow that for a second?"
+      ],
+      "usage_note_de": "Borrow heißt sich etwas ausborgen. Lend heißt jemandem etwas borgen."
+    },
+    {
+      "id": "DAILY-046",
+      "type": "phrase",
+      "category": "DAILY",
+      "group": "REQUEST",
+      "de": "Kannst du es mir später schicken?",
+      "en": "Could you send it to me later?",
+      "alternatives": [
+        "Could you send it over later?"
+      ]
+    },
+    {
+      "id": "DAILY-047",
+      "type": "phrase",
+      "category": "DAILY",
+      "group": "REQUEST",
+      "de": "Danke, dass du mich darauf aufmerksam gemacht hast.",
+      "en": "Thanks for pointing that out.",
+      "alternatives": [
+        "Thanks for bringing that to my attention."
+      ],
+      "usage_note_de": "Die zweite Variante ist etwas formeller."
+    },
+    {
+      "id": "DAILY-048",
+      "type": "phrase",
+      "category": "DAILY",
+      "group": "REQUEST",
+      "de": "Das musst du nicht extra für mich machen.",
+      "en": "You don't need to go out of your way for me.",
+      "alternatives": [
+        "Please don't go to any trouble for me."
+      ]
+    },
+    {
+      "id": "DAILY-049",
+      "type": "phrase",
+      "category": "DAILY",
+      "group": "REQUEST",
+      "de": "Ich kümmere mich darum.",
+      "en": "I'll take care of it.",
+      "alternatives": [
+        "I'll sort it out."
+      ],
+      "usage_note_de": "Sort it out passt, wenn etwas zu klären oder in Ordnung zu bringen ist."
+    },
+    {
+      "id": "DAILY-050",
+      "type": "phrase",
+      "category": "DAILY",
+      "group": "REQUEST",
+      "de": "Ich würde dir gern helfen, aber heute geht es sich nicht aus.",
+      "en": "I'd like to help, but I can't fit it in today.",
+      "alternatives": [
+        "I'd love to help, but I don't have time today."
+      ],
+      "usage_note_de": "Die Wahl für „es geht sich nicht aus“ hängt vom Kontext ab. Hier geht es um die Zeit."
+    },
+    {
+      "id": "DAILY-051",
+      "type": "phrase",
+      "category": "DAILY",
+      "group": "PLANS",
+      "de": "Passt es dir morgen Nachmittag?",
+      "en": "Does tomorrow afternoon work for you?",
+      "alternatives": [
+        "Would tomorrow afternoon suit you?"
+      ]
+    },
+    {
+      "id": "DAILY-052",
+      "type": "phrase",
+      "category": "DAILY",
+      "group": "PLANS",
+      "de": "Bei mir geht sich das am Dienstag aus.",
+      "en": "Tuesday works for me.",
+      "alternatives": [
+        "I can make it on Tuesday."
+      ],
+      "usage_note_de": "Bei Terminen passt work for me oder make it. Für verfügbare Zeit in einem vollen Tag passt eher fit it in."
+    },
+    {
+      "id": "DAILY-053",
+      "type": "phrase",
+      "category": "DAILY",
+      "group": "PLANS",
+      "de": "Können wir es um eine halbe Stunde nach hinten verschieben?",
+      "en": "Could we push it back by half an hour?",
+      "alternatives": [
+        "Could we move it to half an hour later?"
+      ]
+    },
+    {
+      "id": "DAILY-054",
+      "type": "phrase",
+      "category": "DAILY",
+      "group": "PLANS",
+      "de": "Bei mir ist etwas dazwischengekommen.",
+      "en": "Something's come up.",
+      "alternatives": [
+        "Something came up."
+      ]
+    },
+    {
+      "id": "DAILY-055",
+      "type": "phrase",
+      "category": "DAILY",
+      "group": "PLANS",
+      "de": "Ich bin ein bisschen spät dran.",
+      "en": "I'm running a bit late.",
+      "alternatives": [
+        "I'm running slightly late."
+      ]
+    },
+    {
+      "id": "DAILY-056",
+      "type": "phrase",
+      "category": "DAILY",
+      "group": "PLANS",
+      "de": "Ich bin schon unterwegs.",
+      "en": "I'm already on my way.",
+      "alternatives": [
+        "I'm on my way."
+      ]
+    },
+    {
+      "id": "DAILY-057",
+      "type": "phrase",
+      "category": "DAILY",
+      "group": "PLANS",
+      "de": "Ich gebe dir Bescheid, sobald ich mehr weiß.",
+      "en": "I'll let you know as soon as I know more."
+    },
+    {
+      "id": "DAILY-058",
+      "type": "phrase",
+      "category": "DAILY",
+      "group": "PLANS",
+      "de": "Ich melde mich deswegen noch bei dir.",
+      "en": "I'll get back to you about that."
+    },
+    {
+      "id": "DAILY-059",
+      "type": "phrase",
+      "category": "DAILY",
+      "group": "PLANS",
+      "de": "Lassen wir das vorerst offen.",
+      "en": "Let's leave that open for now.",
+      "alternatives": [
+        "Let's not decide just yet."
+      ]
+    },
+    {
+      "id": "DAILY-060",
+      "type": "phrase",
+      "category": "DAILY",
+      "group": "PLANS",
+      "de": "Machen wir es so.",
+      "en": "Let's do that.",
+      "alternatives": [
+        "Let's go with that."
+      ]
     }
   ],
   "vocab_groups": {
@@ -2242,6 +2891,16 @@
       "TASKS": "Arbeitsaufträge & Rechenwege",
       "DIALOGUE": "Fragen & Diskussion",
       "FEEDBACK": "Verständnis & Feedback"
+    }
+  },
+  "phrase_groups": {
+    "DAILY": {
+      "SMALLTALK": "Small Talk & Kennenlernen",
+      "CLARIFY": "Nachfragen & Klarstellen",
+      "BUYTIME": "Zeit gewinnen & Umschreiben",
+      "OPINION": "Meinung & Reaktion",
+      "REQUEST": "Bitten & Höflichkeit",
+      "PLANS": "Termine & Absprachen"
     }
   }
 }

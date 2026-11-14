@@ -28,9 +28,9 @@ footer{padding:.05rem .2rem;color:var(--muted);font-size:.82rem}.focus{scroll-ma
 </head>
 <body>
 <header><div class="wrap">
-  <p class="brand">Scientific English <span class="version">v0.3</span></p>
+  <p class="brand">Scientific English <span class="version">v0.4</span></p>
   <h1>Erklären. Auf Englisch.</h1>
-  <p>Fachvokabeln und Sprechübungen für Physical Chemistry II.</p>
+  <p>Englisch für den Hörsaal und fürs tägliche Gespräch.</p>
 </div></header>
 <main class="wrap">
 <p id="storage-message" class="notice small" role="status" hidden></p>
@@ -50,7 +50,7 @@ footer{padding:.05rem .2rem;color:var(--muted);font-size:.82rem}.focus{scroll-ma
     <label>Rundengröße<select id="limit"><option value="5">5 Karten</option><option value="10">10 Karten</option></select></label>
   </div>
   <div class="controls vocab-controls" id="vocab-controls" hidden>
-    <label>Richtung<select id="direction">
+    <label id="direction-control">Richtung<select id="direction">
       <option value="de-en">Deutsch → Englisch</option>
       <option value="en-de">Englisch → Deutsch</option>
     </select></label>
@@ -144,6 +144,7 @@ function validateDeck(data){
     if(typeof c.id!=='string' || !/^[A-Z]+-\d+$/.test(c.id) || ids.has(c.id) || !Object.hasOwn(data.categories,c.category) || !['phrase','term'].includes(c.type) || typeof c.de!=='string' || !c.de.trim() || typeof c.en!=='string' || !c.en.trim() ||
       (c.alternatives && (!Array.isArray(c.alternatives)||c.alternatives.some(a=>typeof a!=='string'||!a.trim()))) ||
       (c.type==='term' && (c.scenario_de||c.scenario_answer_en||!Object.hasOwn(data.vocab_groups?.[c.category]??{},c.group))) ||
+      (c.type==='phrase' && c.group && !Object.hasOwn(data.phrase_groups?.[c.category]??{},c.group)) ||
       Boolean(c.scenario_de)!==Boolean(c.scenario_answer_en)) throw Error('Ungültige Karte im Glossar.');
     ids.add(c.id);
   }
@@ -164,32 +165,37 @@ function validateBackup(saved){
 function selection(){
   const vocab=$('mode').value==='vocab';
   return {category:$('category').value,mode:vocab?'vocab-'+$('direction').value:$('mode').value,
-    limit:Number($('limit').value),group:vocab?$('vocab-group').value:''};
+    limit:Number($('limit').value),group:$('group-control').hidden?'':$('vocab-group').value};
 }
 function pool(cfg){
   return deck.entries.filter(c=>(!cfg.category||c.category===cfg.category) &&
+    (!cfg.group||cfg.group===c.category+'/'+c.group) &&
     (isVocab(cfg.mode)
-      ? c.type==='term' && (!cfg.group||cfg.group===c.category+'/'+c.group)
+      ? c.type==='term'
       : c.type==='phrase' && (cfg.mode!=='scenario'||c.scenario_de)));
 }
 function refreshGroups(){
   const select=$('vocab-group'), previous=select.value, category=$('category').value;
-  const groups=Object.entries(deck.vocab_groups??{}).filter(([id])=>!category||category===id);
+  const mode=$('mode').value;
+  const groupMap=mode==='vocab'?deck.vocab_groups:
+    category&&mode!=='scenario'?deck.phrase_groups:undefined;
+  const groups=Object.entries(groupMap??{}).filter(([id])=>!category||category===id);
   const options=groups.flatMap(([id,labels])=>Object.entries(labels).map(([group,label])=>
     new Option(groups.length>1?deck.categories[id]+' · '+label:label,id+'/'+group)));
   select.replaceChildren(new Option('Alle Teilgebiete',''),...options);
   select.value=options.some(option=>option.value===previous)?previous:'';
   $('group-control').hidden=options.length===0;
+  $('direction-control').hidden=mode!=='vocab';
+  $('vocab-controls').hidden=mode!=='vocab'&&options.length===0;
 }
 function changeMode(){
   const vocab=$('mode').value==='vocab';
   const limit=$('limit'), previous=limit.value, sizes=vocab?[10,20,30,50]:[5,10];
   limit.replaceChildren(...sizes.map(n=>new Option(n+' Karten',String(n))));
   limit.value=sizes.includes(Number(previous))?previous:String(sizes[0]);
-  $('vocab-controls').hidden=!vocab;
   $('setup-hint').textContent=vocab?'Übe einzelne Wörter und kurze Wendungen. Übersetzung aufdecken, dann selbst bewerten.':
     'Sag die Antwort zuerst laut. Decke sie dann auf und bewerte, wie sicher du sie formulieren konntest.';
-  if(vocab)refreshGroups();
+  refreshGroups();
   updateStats();
 }
 function updateStats(){
@@ -232,7 +238,8 @@ function next(){
   }
   revealed=false;
   const {card,retry}=active;
-  $('topic').textContent=isVocab(config.mode)?deck.vocab_groups[card.category][card.group]:deck.categories[card.category];
+  const groups=isVocab(config.mode)?deck.vocab_groups:deck.phrase_groups;
+  $('topic').textContent=groups?.[card.category]?.[card.group]??deck.categories[card.category];
   $('position').textContent=retry ? 'Wiederholung · '+finished.size+' von '+total+' bearbeitet' : 'Karte '+(finished.size+1)+' von '+total;
   $('progress').max=total;$('progress').value=finished.size;
   const mode=config.mode;
@@ -349,7 +356,7 @@ async function init(){
     if(raw)marks=validateBackup({format:'scientific-english-trainer',version:1,records:JSON.parse(raw)});
   }catch{setText('storage-message','Der gespeicherte Lernstand war nicht lesbar. Du kannst eine Sicherungsdatei importieren.')}
   for(const [id,label] of Object.entries(deck.categories))$('category').add(new Option(label,id));
-  $('category').addEventListener('change',()=>{if($('mode').value==='vocab')refreshGroups();updateStats();search()});
+  $('category').addEventListener('change',()=>{refreshGroups();updateStats();search()});
   $('mode').addEventListener('change',changeMode);
   $('direction').addEventListener('change',updateStats);
   $('vocab-group').addEventListener('change',updateStats);
@@ -361,12 +368,15 @@ async function init(){
   $('hear-answer').onclick=()=>{if(active&&!isVocab(config.mode))speak(config.mode==='scenario'?active.card.scenario_answer_en:active.card.en)};
   $('export').onclick=exportMarks;$('import').onclick=()=>$('file').click();$('file').onchange=importMarks;
   const params=new URLSearchParams(window.location?.search??'');
+  const requested=params.get('thema')?.toUpperCase();
   if(params.get('modus')==='vokabeln'){
     $('mode').value='vocab';
     const topics=deck.vocab_groups??{};
-    const requested=params.get('thema')?.toUpperCase();
     if(requested&&Object.hasOwn(topics,requested))$('category').value=requested;
     else if(Object.hasOwn(topics,'SPEC'))$('category').value='SPEC';
+  }else if(requested&&Object.hasOwn(deck.categories,requested)){
+    $('mode').value=params.get('modus')==='verstehen'?'recognise':'speak';
+    $('category').value=requested;
   }
   changeMode();
   search();$('app').hidden=false;
