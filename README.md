@@ -1,15 +1,15 @@
 # Scientific English Trainer
 
-Ein kleiner Sprachtrainer für englischsprachige Erklärungen in Physical Chemistry II. Version 0.2 enthält 113 Spektroskopie-Fachvokabeln, 53 Satzkarten und zehn kurze Hörsaal-Rollenspiele. Die Sammlung enthält eigens formulierte Beispiele, keine offiziellen Lehrunterlagen.
+Ein kleiner Sprachtrainer für englischsprachige Erklärungen in Physical Chemistry II. Version 0.3 enthält 60 Vokabelkarten zu Classroom English, 113 Spektroskopie-Fachvokabeln, 53 Satzkarten und zehn kurze Hörsaal-Rollenspiele. Die Sammlung enthält eigens formulierte Beispiele, keine offiziellen Lehrunterlagen.
 
 ## Üben
 
-[Spektroskopie-Vokabeltrainer starten](https://ekerzendorfer.github.io/SCIENTIFIC_ENGLISH_TRAINER/?modus=vokabeln)
+[Classroom-English-Vokabeltrainer starten](https://ekerzendorfer.github.io/SCIENTIFIC_ENGLISH_TRAINER/?modus=vokabeln&thema=class) · [Spektroskopie-Vokabeltrainer starten](https://ekerzendorfer.github.io/SCIENTIFIC_ENGLISH_TRAINER/?modus=vokabeln)
 
 - **Aktiv sprechen (DE → EN):** Erst laut formulieren, dann die Musterantwort und mögliche Varianten vergleichen.
 - **Verstehen (EN → DE):** Die Bedeutung erklären. Eine englische Vorlesestimme kann je nach Gerät verfügbar sein.
 - **Hörsaal-Rollenspiel:** Eine Studierendenfrage oder Unterrichtssituation frei in zwei bis drei Sätzen beantworten.
-- **Vokabeltrainer:** Einzelne Fachbegriffe, wahlweise DE → EN oder EN → DE, ohne Audio. Wähle 10, 20, 30 oder 50 Karten und bei Spektroskopie optional ein Teilgebiet. Sind weniger Karten verfügbar, fällt die Runde kürzer aus.
+- **Vokabeltrainer:** Einzelne Fachbegriffe und kurze feste Wendungen, wahlweise DE → EN oder EN → DE, ohne Audio. Wähle 10, 20, 30 oder 50 Karten und optional ein Teilgebiet. Sind weniger Karten verfügbar, fällt die Runde kürzer aus.
 - **Glossar:** Deutsch oder Englisch suchen. Der Themenfilter bleibt dabei aktiv.
 
 Bei der Selbstbewertung zählt der Sinn, nicht der genaue Wortlaut. Fällige Karten kommen vor neuen. „Auch bereits geübte“ füllt eine Runde bei Bedarf mit Karten auf, die noch nicht fällig sind. Fortschritt und Fälligkeiten werden getrennt je Karte und Modus gespeichert. „Nicht gewusst“ fügt eine Wiederholung ans Rundenende und setzt die Karte für den nächsten Tag an. „Unsicher“ setzt sie für zwei Tage an. Mehrfach sicher gewusste Karten erhalten Abstände von 3, 7, 14 und 30 Tagen. Im Vokabeltrainer kommen sowohl „Nicht gewusst“ als auch „Unsicher“ einmal am Rundenende erneut vor und werden nach 24 Stunden wieder fällig. Eine erfolgreiche Sofortwiederholung ändert das nicht. Der Lernstand für Vokabeln wird pro Richtung separat geführt. Die bisherigen Sprechkarten und Lernstände bleiben unverändert.

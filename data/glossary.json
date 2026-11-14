@@ -1624,6 +1624,607 @@
         "signal assignment",
         "peak assignment"
       ]
+    },
+    {
+      "id": "VOCCLASS-001",
+      "type": "term",
+      "category": "CLASS",
+      "group": "COURSE",
+      "de": "Vorlesung",
+      "en": "lecture"
+    },
+    {
+      "id": "VOCCLASS-002",
+      "type": "term",
+      "category": "CLASS",
+      "group": "COURSE",
+      "de": "Übungseinheit (betreut)",
+      "en": "tutorial session",
+      "alternatives": [
+        "tutorial",
+        "guided practice session"
+      ],
+      "usage_note_de": "Tutorial passt für eine betreute Kleingruppenübung. Für einen Übungsteil im Hörsaal passt auch guided practice session."
+    },
+    {
+      "id": "VOCCLASS-003",
+      "type": "term",
+      "category": "CLASS",
+      "group": "COURSE",
+      "de": "Hörsaal",
+      "en": "lecture theatre",
+      "alternatives": [
+        "lecture hall"
+      ]
+    },
+    {
+      "id": "VOCCLASS-004",
+      "type": "term",
+      "category": "CLASS",
+      "group": "COURSE",
+      "de": "Lehrveranstaltung (Hochschule)",
+      "en": "course",
+      "alternatives": [
+        "module"
+      ],
+      "usage_note_de": "Course ist die allgemeine Wahl. Module passt, wenn ein abgegrenzter Teil eines Studiengangs gemeint ist."
+    },
+    {
+      "id": "VOCCLASS-005",
+      "type": "term",
+      "category": "CLASS",
+      "group": "COURSE",
+      "de": "Lernziel",
+      "en": "learning objective",
+      "usage_note_de": "Ein learning outcome ist das, was Studierende nach der Einheit können oder zeigen sollen."
+    },
+    {
+      "id": "VOCCLASS-006",
+      "type": "term",
+      "category": "CLASS",
+      "group": "COURSE",
+      "de": "Vorwissen",
+      "en": "prior knowledge",
+      "alternatives": [
+        "background knowledge"
+      ]
+    },
+    {
+      "id": "VOCCLASS-007",
+      "type": "term",
+      "category": "CLASS",
+      "group": "COURSE",
+      "de": "Kursunterlagen",
+      "en": "course materials"
+    },
+    {
+      "id": "VOCCLASS-008",
+      "type": "term",
+      "category": "CLASS",
+      "group": "COURSE",
+      "de": "Arbeitsblatt",
+      "en": "worksheet"
+    },
+    {
+      "id": "VOCCLASS-009",
+      "type": "term",
+      "category": "CLASS",
+      "group": "COURSE",
+      "de": "Folien",
+      "en": "slides"
+    },
+    {
+      "id": "VOCCLASS-010",
+      "type": "term",
+      "category": "CLASS",
+      "group": "COURSE",
+      "de": "Tafelbild",
+      "en": "what’s on the board",
+      "alternatives": [
+        "board notes"
+      ]
+    },
+    {
+      "id": "VOCCLASS-011",
+      "type": "term",
+      "category": "CLASS",
+      "group": "COURSE",
+      "de": "Musterlösung (Rechenaufgabe)",
+      "en": "worked solution",
+      "alternatives": [
+        "worked answer"
+      ],
+      "usage_note_de": "Worked bedeutet, dass der Lösungsweg gezeigt wird, nicht nur das Ergebnis."
+    },
+    {
+      "id": "VOCCLASS-012",
+      "type": "term",
+      "category": "CLASS",
+      "group": "COURSE",
+      "de": "Übungsaufgabe",
+      "en": "practice problem",
+      "alternatives": [
+        "practice exercise"
+      ]
+    },
+    {
+      "id": "VOCCLASS-013",
+      "type": "term",
+      "category": "CLASS",
+      "group": "STRUCTURE",
+      "de": "zum Einstieg",
+      "en": "to get us started",
+      "alternatives": [
+        "as a starting point"
+      ]
+    },
+    {
+      "id": "VOCCLASS-014",
+      "type": "term",
+      "category": "CLASS",
+      "group": "STRUCTURE",
+      "de": "einen kurzen Überblick geben",
+      "en": "give a brief overview"
+    },
+    {
+      "id": "VOCCLASS-015",
+      "type": "term",
+      "category": "CLASS",
+      "group": "STRUCTURE",
+      "de": "kurz wiederholen (Stoff)",
+      "en": "briefly recap",
+      "alternatives": [
+        "quickly go over"
+      ]
+    },
+    {
+      "id": "VOCCLASS-016",
+      "type": "term",
+      "category": "CLASS",
+      "group": "STRUCTURE",
+      "de": "daran anknüpfen",
+      "en": "build on that"
+    },
+    {
+      "id": "VOCCLASS-017",
+      "type": "term",
+      "category": "CLASS",
+      "group": "STRUCTURE",
+      "de": "darauf zurückkommen",
+      "en": "come back to that",
+      "alternatives": [
+        "return to that"
+      ]
+    },
+    {
+      "id": "VOCCLASS-018",
+      "type": "term",
+      "category": "CLASS",
+      "group": "STRUCTURE",
+      "de": "zum nächsten Punkt übergehen",
+      "en": "move on to the next point"
+    },
+    {
+      "id": "VOCCLASS-019",
+      "type": "term",
+      "category": "CLASS",
+      "group": "STRUCTURE",
+      "de": "etwas vorwegnehmen (inhaltlich)",
+      "en": "anticipate a later point",
+      "alternatives": [
+        "jump ahead a little"
+      ],
+      "usage_note_de": "Jump ahead a little passt als mündlicher Übergang, etwa in einem kurzen Ausblick."
+    },
+    {
+      "id": "VOCCLASS-020",
+      "type": "term",
+      "category": "CLASS",
+      "group": "STRUCTURE",
+      "de": "der rote Faden",
+      "en": "the main thread",
+      "alternatives": [
+        "the unifying thread"
+      ]
+    },
+    {
+      "id": "VOCCLASS-021",
+      "type": "term",
+      "category": "CLASS",
+      "group": "STRUCTURE",
+      "de": "der wichtigste Punkt zum Mitnehmen",
+      "en": "the key takeaway",
+      "alternatives": [
+        "the main takeaway"
+      ]
+    },
+    {
+      "id": "VOCCLASS-022",
+      "type": "term",
+      "category": "CLASS",
+      "group": "STRUCTURE",
+      "de": "etwas hervorheben",
+      "en": "highlight something",
+      "alternatives": [
+        "draw attention to something"
+      ]
+    },
+    {
+      "id": "VOCCLASS-023",
+      "type": "term",
+      "category": "CLASS",
+      "group": "STRUCTURE",
+      "de": "etwas fürs Erste beiseitelassen",
+      "en": "set something aside for now",
+      "alternatives": [
+        "leave something aside for now"
+      ]
+    },
+    {
+      "id": "VOCCLASS-024",
+      "type": "term",
+      "category": "CLASS",
+      "group": "STRUCTURE",
+      "de": "zum Abschluss",
+      "en": "to wrap up",
+      "alternatives": [
+        "to finish off"
+      ]
+    },
+    {
+      "id": "VOCCLASS-025",
+      "type": "term",
+      "category": "CLASS",
+      "group": "TASKS",
+      "de": "eine Aufgabe bearbeiten",
+      "en": "work on a problem",
+      "alternatives": [
+        "tackle a problem"
+      ]
+    },
+    {
+      "id": "VOCCLASS-026",
+      "type": "term",
+      "category": "CLASS",
+      "group": "TASKS",
+      "de": "eine Aufgabe Schritt für Schritt durchgehen",
+      "en": "work through a problem",
+      "alternatives": [
+        "go through a problem step by step"
+      ]
+    },
+    {
+      "id": "VOCCLASS-027",
+      "type": "term",
+      "category": "CLASS",
+      "group": "TASKS",
+      "de": "eine Aufgabe vorrechnen",
+      "en": "work through a problem on the board",
+      "alternatives": [
+        "demonstrate how to solve a problem"
+      ]
+    },
+    {
+      "id": "VOCCLASS-028",
+      "type": "term",
+      "category": "CLASS",
+      "group": "TASKS",
+      "de": "zu zweit arbeiten",
+      "en": "work in pairs"
+    },
+    {
+      "id": "VOCCLASS-029",
+      "type": "term",
+      "category": "CLASS",
+      "group": "TASKS",
+      "de": "sich mit der Sitznachbarin oder dem Sitznachbarn austauschen",
+      "en": "discuss it with the person next to you"
+    },
+    {
+      "id": "VOCCLASS-030",
+      "type": "term",
+      "category": "CLASS",
+      "group": "TASKS",
+      "de": "Antworten vergleichen",
+      "en": "compare answers"
+    },
+    {
+      "id": "VOCCLASS-031",
+      "type": "term",
+      "category": "CLASS",
+      "group": "TASKS",
+      "de": "Notizen machen",
+      "en": "take notes",
+      "alternatives": [
+        "make notes"
+      ]
+    },
+    {
+      "id": "VOCCLASS-032",
+      "type": "term",
+      "category": "CLASS",
+      "group": "TASKS",
+      "de": "eine Skizze anfertigen",
+      "en": "draw a sketch",
+      "alternatives": [
+        "make a sketch"
+      ]
+    },
+    {
+      "id": "VOCCLASS-033",
+      "type": "term",
+      "category": "CLASS",
+      "group": "TASKS",
+      "de": "die Achsen beschriften",
+      "en": "label the axes"
+    },
+    {
+      "id": "VOCCLASS-034",
+      "type": "term",
+      "category": "CLASS",
+      "group": "TASKS",
+      "de": "ein Ergebnis abschätzen",
+      "en": "estimate a result"
+    },
+    {
+      "id": "VOCCLASS-035",
+      "type": "term",
+      "category": "CLASS",
+      "group": "TASKS",
+      "de": "das Ergebnis auf Plausibilität prüfen",
+      "en": "check whether the result makes sense",
+      "alternatives": [
+        "do a sanity check on the result"
+      ],
+      "usage_note_de": "Sanity check ist eine informelle Variante."
+    },
+    {
+      "id": "VOCCLASS-036",
+      "type": "term",
+      "category": "CLASS",
+      "group": "TASKS",
+      "de": "den Rechenweg angeben",
+      "en": "show your working",
+      "alternatives": [
+        "show your work"
+      ],
+      "usage_note_de": "Show your working ist im britischen Unterrichtsenglisch geläufig."
+    },
+    {
+      "id": "VOCCLASS-037",
+      "type": "term",
+      "category": "CLASS",
+      "group": "DIALOGUE",
+      "de": "eine Rückfrage",
+      "en": "a follow-up question"
+    },
+    {
+      "id": "VOCCLASS-038",
+      "type": "term",
+      "category": "CLASS",
+      "group": "DIALOGUE",
+      "de": "um eine Klarstellung bitten",
+      "en": "ask for clarification"
+    },
+    {
+      "id": "VOCCLASS-039",
+      "type": "term",
+      "category": "CLASS",
+      "group": "DIALOGUE",
+      "de": "sich zu Wort melden",
+      "en": "speak up",
+      "alternatives": [
+        "chime in"
+      ],
+      "usage_note_de": "Chime in ist informell und passt zu einem laufenden Gespräch."
+    },
+    {
+      "id": "VOCCLASS-040",
+      "type": "term",
+      "category": "CLASS",
+      "group": "DIALOGUE",
+      "de": "sich melden (Hand heben)",
+      "en": "raise your hand",
+      "alternatives": [
+        "put your hand up"
+      ]
+    },
+    {
+      "id": "VOCCLASS-041",
+      "type": "term",
+      "category": "CLASS",
+      "group": "DIALOGUE",
+      "de": "jemanden drannehmen",
+      "en": "call on someone",
+      "alternatives": [
+        "ask someone to answer"
+      ]
+    },
+    {
+      "id": "VOCCLASS-042",
+      "type": "term",
+      "category": "CLASS",
+      "group": "DIALOGUE",
+      "de": "eine Vermutung äußern",
+      "en": "make a guess",
+      "alternatives": [
+        "offer a guess"
+      ]
+    },
+    {
+      "id": "VOCCLASS-043",
+      "type": "term",
+      "category": "CLASS",
+      "group": "DIALOGUE",
+      "de": "eine Antwort begründen",
+      "en": "justify an answer",
+      "alternatives": [
+        "explain the reasoning behind an answer"
+      ]
+    },
+    {
+      "id": "VOCCLASS-044",
+      "type": "term",
+      "category": "CLASS",
+      "group": "DIALOGUE",
+      "de": "etwas genauer erläutern",
+      "en": "elaborate on something",
+      "alternatives": [
+        "explain something in more detail"
+      ],
+      "usage_note_de": "Mit on: elaborate on a point."
+    },
+    {
+      "id": "VOCCLASS-045",
+      "type": "term",
+      "category": "CLASS",
+      "group": "DIALOGUE",
+      "de": "es anders formulieren",
+      "en": "put it another way",
+      "alternatives": [
+        "rephrase it"
+      ]
+    },
+    {
+      "id": "VOCCLASS-046",
+      "type": "term",
+      "category": "CLASS",
+      "group": "DIALOGUE",
+      "de": "mit eigenen Worten",
+      "en": "in your own words"
+    },
+    {
+      "id": "VOCCLASS-047",
+      "type": "term",
+      "category": "CLASS",
+      "group": "DIALOGUE",
+      "de": "ein Beispiel nennen",
+      "en": "give an example"
+    },
+    {
+      "id": "VOCCLASS-048",
+      "type": "term",
+      "category": "CLASS",
+      "group": "DIALOGUE",
+      "de": "einen Einwand vorbringen",
+      "en": "raise an objection"
+    },
+    {
+      "id": "VOCCLASS-049",
+      "type": "term",
+      "category": "CLASS",
+      "group": "FEEDBACK",
+      "de": "Verständnis überprüfen",
+      "en": "check for understanding",
+      "alternatives": [
+        "check that everyone has understood"
+      ]
+    },
+    {
+      "id": "VOCCLASS-050",
+      "type": "term",
+      "category": "CLASS",
+      "group": "FEEDBACK",
+      "de": "einen Hinweis geben",
+      "en": "give a hint",
+      "alternatives": [
+        "offer a hint"
+      ]
+    },
+    {
+      "id": "VOCCLASS-051",
+      "type": "term",
+      "category": "CLASS",
+      "group": "FEEDBACK",
+      "de": "eine häufige Fehlvorstellung",
+      "en": "a common misconception"
+    },
+    {
+      "id": "VOCCLASS-052",
+      "type": "term",
+      "category": "CLASS",
+      "group": "FEEDBACK",
+      "de": "eine typische Stolperfalle",
+      "en": "a common pitfall"
+    },
+    {
+      "id": "VOCCLASS-053",
+      "type": "term",
+      "category": "CLASS",
+      "group": "FEEDBACK",
+      "de": "zwei Begriffe verwechseln",
+      "en": "mix up two terms",
+      "alternatives": [
+        "confuse two terms"
+      ]
+    },
+    {
+      "id": "VOCCLASS-054",
+      "type": "term",
+      "category": "CLASS",
+      "group": "FEEDBACK",
+      "de": "auf dem richtigen Weg sein",
+      "en": "be on the right track"
+    },
+    {
+      "id": "VOCCLASS-055",
+      "type": "term",
+      "category": "CLASS",
+      "group": "FEEDBACK",
+      "de": "fast richtig liegen",
+      "en": "be close",
+      "alternatives": [
+        "be nearly right"
+      ]
+    },
+    {
+      "id": "VOCCLASS-056",
+      "type": "term",
+      "category": "CLASS",
+      "group": "FEEDBACK",
+      "de": "etwas im Lösungsweg übersehen",
+      "en": "overlook something in the solution",
+      "alternatives": [
+        "miss something in the solution"
+      ]
+    },
+    {
+      "id": "VOCCLASS-057",
+      "type": "term",
+      "category": "CLASS",
+      "group": "FEEDBACK",
+      "de": "einen Schritt überspringen",
+      "en": "skip a step"
+    },
+    {
+      "id": "VOCCLASS-058",
+      "type": "term",
+      "category": "CLASS",
+      "group": "FEEDBACK",
+      "de": "konstruktive Rückmeldung geben",
+      "en": "give constructive feedback"
+    },
+    {
+      "id": "VOCCLASS-059",
+      "type": "term",
+      "category": "CLASS",
+      "group": "FEEDBACK",
+      "de": "die Antwort gemeinsam besprechen",
+      "en": "discuss the answer together",
+      "alternatives": [
+        "go over the answer together"
+      ]
+    },
+    {
+      "id": "VOCCLASS-060",
+      "type": "term",
+      "category": "CLASS",
+      "group": "FEEDBACK",
+      "de": "jemandem Zeit zum Nachdenken geben",
+      "en": "give someone time to think",
+      "alternatives": [
+        "give someone a moment to think"
+      ]
     }
   ],
   "vocab_groups": {
@@ -1634,6 +2235,13 @@
       "PHOTO": "Lumineszenz & Photophysik",
       "ATOM": "Termsymbole & Feinstruktur",
       "NMR": "NMR"
+    },
+    "CLASS": {
+      "COURSE": "Lehrveranstaltung & Materialien",
+      "STRUCTURE": "Einstieg, Übergänge & Abschluss",
+      "TASKS": "Arbeitsaufträge & Rechenwege",
+      "DIALOGUE": "Fragen & Diskussion",
+      "FEEDBACK": "Verständnis & Feedback"
     }
   }
 }

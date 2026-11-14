@@ -28,7 +28,7 @@ footer{padding:.05rem .2rem;color:var(--muted);font-size:.82rem}.focus{scroll-ma
 </head>
 <body>
 <header><div class="wrap">
-  <p class="brand">Scientific English <span class="version">v0.2</span></p>
+  <p class="brand">Scientific English <span class="version">v0.3</span></p>
   <h1>Erklären. Auf Englisch.</h1>
   <p>Fachvokabeln und Sprechübungen für Physical Chemistry II.</p>
 </div></header>
@@ -187,7 +187,7 @@ function changeMode(){
   limit.replaceChildren(...sizes.map(n=>new Option(n+' Karten',String(n))));
   limit.value=sizes.includes(Number(previous))?previous:String(sizes[0]);
   $('vocab-controls').hidden=!vocab;
-  $('setup-hint').textContent=vocab?'Übe einzelne Fachbegriffe. Übersetzung aufdecken, dann selbst bewerten.':
+  $('setup-hint').textContent=vocab?'Übe einzelne Wörter und kurze Wendungen. Übersetzung aufdecken, dann selbst bewerten.':
     'Sag die Antwort zuerst laut. Decke sie dann auf und bewerte, wie sicher du sie formulieren konntest.';
   if(vocab)refreshGroups();
   updateStats();
@@ -196,7 +196,7 @@ function updateStats(){
   const cfg=selection(), cards=pool(cfg), fresh=cards.filter(c=>!record(c,cfg.mode)).length;
   const review=cards.filter(c=>record(c,cfg.mode)&&due(c,cfg.mode)).length;
   $('stats').textContent=cards.length ? fresh+' neu · '+review+' fällig · '+cards.length+' im Filter' :
-    isVocab(cfg.mode)?'Hier gibt es noch keine Fachvokabeln. Der erste Wortschatz steht unter Spektroskopie.':'Für dieses Thema gibt es in diesem Modus noch keine Karten.';
+    isVocab(cfg.mode)?'Hier gibt es noch keine Vokabelkarten. Wähle ein anderes Thema oder alle Themen.':'Für dieses Thema gibt es in diesem Modus noch keine Karten.';
   $('start').disabled=fresh+review===0;
   $('free').disabled=cards.length===0;
 }
@@ -236,7 +236,8 @@ function next(){
   $('position').textContent=retry ? 'Wiederholung · '+finished.size+' von '+total+' bearbeitet' : 'Karte '+(finished.size+1)+' von '+total;
   $('progress').max=total;$('progress').value=finished.size;
   const mode=config.mode;
-  $('instruction').textContent=isVocab(mode)?(fromEnglish(mode)?'Wie heißt der Fachbegriff auf Deutsch?':'Wie heißt der Fachbegriff auf Englisch?'):
+  const target=fromEnglish(mode)?'Deutsch':'Englisch';
+  $('instruction').textContent=isVocab(mode)?'Wie sagt man das auf '+target+'?':
     mode==='scenario'?'Antworte auf Englisch wie im Hörsaal. Zwei bis drei Sätze reichen.':mode==='speak'?'Formuliere laut auf Englisch.':'Erkläre die Bedeutung auf Deutsch.';
   $('prompt').textContent=mode==='scenario'?card.scenario_de:fromEnglish(mode)?card.en:card.de;
   $('prompt').lang=fromEnglish(mode)?'en':'de';
@@ -256,7 +257,7 @@ function reveal(){
   setText('example',mode!=='scenario'&&card.example_en?'“'+card.example_en+'”':'');
   setText('note',card.usage_note_de||'');
   $('hear-answer').hidden=!canSpeak||mode==='recognise'||isVocab(mode);
-  $('rating-hint').textContent=isVocab(mode)?'Richtige Fachsynonyme zählen. Unsichere und nicht gewusste Vokabeln kommen am Rundenende erneut.':
+  $('rating-hint').textContent=isVocab(mode)?'Passende Varianten zählen. Unsichere und nicht gewusste Vokabeln kommen am Rundenende erneut.':
     'Bewerte deine eigene Formulierung. Sinngemäß richtige Varianten zählen.';
   $('answer').hidden=false;$('ratings').hidden=false;$('reveal').hidden=true;
   $('answer-title').focus();
@@ -359,9 +360,13 @@ async function init(){
   $('hear-prompt').onclick=()=>speak(active.card.en);
   $('hear-answer').onclick=()=>{if(active&&!isVocab(config.mode))speak(config.mode==='scenario'?active.card.scenario_answer_en:active.card.en)};
   $('export').onclick=exportMarks;$('import').onclick=()=>$('file').click();$('file').onchange=importMarks;
-  if(new URLSearchParams(window.location?.search??'').get('modus')==='vokabeln'){
+  const params=new URLSearchParams(window.location?.search??'');
+  if(params.get('modus')==='vokabeln'){
     $('mode').value='vocab';
-    if(Object.hasOwn(deck.vocab_groups??{},'SPEC'))$('category').value='SPEC';
+    const topics=deck.vocab_groups??{};
+    const requested=params.get('thema')?.toUpperCase();
+    if(requested&&Object.hasOwn(topics,requested))$('category').value=requested;
+    else if(Object.hasOwn(topics,'SPEC'))$('category').value='SPEC';
   }
   changeMode();
   search();$('app').hidden=false;
